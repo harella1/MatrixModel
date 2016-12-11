@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="28df87f3-56ee-4549-b16f-916481a76f74" name="FactoryMethod" linkedPackageId="70df29aa-4504-4c66-bbf8-6aa677a6a92e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a6e14ae2-391f-41f7-9a50-5e10b426ac80">
+      <profileInstance Id="d7ba47c9-117e-42c6-adf3-226875fc02d1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d40a1b4c-c57f-479d-b872-a9118ab40b99">
+      <profileInstance Id="bcdc1024-0c40-4fc0-ba02-383daae3ab8d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a2753ad9-2f59-42a1-a413-85af37691c6a" name="AdventureBookReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="208a2359-5735-45ec-916f-64c007dc8e39" />
+        <suppliersInternal>
+          <dependency Id="c621d3aa-46e2-4f36-a897-43c2cb1a7ea9">
+            <classMoniker Id="58144e4f-7202-4693-b08d-60137476be95" LastKnownName="TreasureIsland" />
+            <elementDefinition Id="bcf4d5ee-9582-45d8-8937-05f2a5db9a4f" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="488a29bc-dacf-4d5b-b26e-648526259987" isSubstitutable="false">
+            <classMoniker Id="8e878935-631b-4591-b2be-e3ef59f80a62" LastKnownName="BookReader" />
+            <elementDefinition Id="ec7b85d1-00fa-43b8-8e2d-176cc5fdff34" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="8ac738d0-2ce9-42ba-895f-73f9a20c4490" name="BuyBook" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="30dd8aa4-bcac-44ca-bca4-23789ba27820" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a86f28e8-0bf4-4544-9b27-56abb975ae13" direction="Return">
+                  <elementDefinition Id="c985e90a-40c7-4201-ad35-da0775946d92" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ccc5cdc5-26e6-4a84-9764-04aeee2f5148" LastKnownName="Book" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f8427e4b-cdb8-47e9-af4f-95d951fc4d7f" name="Book" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d61e8b53-04cf-41cc-8a2e-f715b94f63cb" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8e878935-631b-4591-b2be-e3ef59f80a62" name="BookReader" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="39cfc5ea-8fbc-421d-9691-e618ad0a3232" />
+        <ownedOperationsInternal>
+          <operation Id="31b0c9ab-997d-4d38-9c77-54d148f60d9c" name="BuyBook" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2cb845aa-d41e-459a-ab8e-29ada2dc2529" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b4087933-82a9-40f6-b3f1-62fbe54855eb" direction="Return">
+                  <elementDefinition Id="7f9e5358-381d-44ca-8797-8ea1f0da9744" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="502b2ccd-72d0-4eb7-a4d8-87cc0d2867b4" LastKnownName="Book" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="03e6b78b-f65a-4991-a32b-614eb3f77214" name="DisplayOwnedBooks" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb9f41a1-1008-4684-9748-7c9bb7e31e2c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c7bb0a8d-fb2d-46c4-a1d0-4079d9d75135" name="FantasyBookReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bc1f77a2-b82e-408e-bf31-01bf5361c4ad" />
+        <suppliersInternal>
+          <dependency Id="e1edbb69-5c98-4ab6-ac12-c36ffac4a477">
+            <classMoniker Id="7f6af9ca-2a25-4e50-b4a9-2db4f01fd685" LastKnownName="LordOfTheRings" />
+            <elementDefinition Id="6f12c879-5724-4fd6-9d4c-c9642fd9b0a8" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="9ac36b33-1477-4a0a-bd23-9e2fdf56d8ce" isSubstitutable="false">
+            <classMoniker Id="8e878935-631b-4591-b2be-e3ef59f80a62" LastKnownName="BookReader" />
+            <elementDefinition Id="fdfe25aa-2f6e-4142-b769-dfd6db02f263" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="2e839aab-9f43-44b4-b92e-433eaa0b587d" name="BuyBook" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fa4488ab-b19a-4868-8743-3d36b29c35e4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cd293afc-7e70-41f6-b6a5-129fd41b2ffb" direction="Return">
+                  <elementDefinition Id="742f1122-4cdc-4152-94c0-e0860fcf920a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ccc5cdc5-26e6-4a84-9764-04aeee2f5148" LastKnownName="Book" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c6a47e35-5c5b-49e2-bd5b-dd3dcc309d71" name="HorrorBookReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d3256973-9e66-41a3-811d-c799e6a2356d" />
+        <suppliersInternal>
+          <dependency Id="c182d9d5-dc91-4633-b8e1-5c9cd9ebe858">
+            <classMoniker Id="76a956ef-a3cb-4da9-a884-e8b26137b290" LastKnownName="Dracula" />
+            <elementDefinition Id="894a0ae4-83e9-45f3-a3bf-168ef4ae698c" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="9a7f509c-d70f-424e-a996-642bb2f5b021" isSubstitutable="false">
+            <classMoniker Id="8e878935-631b-4591-b2be-e3ef59f80a62" LastKnownName="BookReader" />
+            <elementDefinition Id="463fcc74-faf0-4cdb-a96c-bb4cfeb3771c" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="7b499714-6de6-4c5b-a2a8-94c0576d3a59" name="BuyBook" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11af586a-5105-4317-8164-30e400657c75" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="69dfa2e4-a7c8-4374-8bce-85c27bb05b06" direction="Return">
+                  <elementDefinition Id="8d2810b4-efb7-4c58-bda2-f9ea825d5a10" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ccc5cdc5-26e6-4a84-9764-04aeee2f5148" LastKnownName="Book" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="58144e4f-7202-4693-b08d-60137476be95" name="TreasureIsland" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="561e0db1-f0b8-467f-bd82-a256e1f5da9a" />
+        <generalsInternal>
+          <generalization Id="6982c4f8-f4cb-4d5e-8d35-1fe342810f77" isSubstitutable="false">
+            <classMoniker Id="f8427e4b-cdb8-47e9-af4f-95d951fc4d7f" LastKnownName="Book" />
+            <elementDefinition Id="8c39c273-9096-446e-af0e-e6ec6d03de5b" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7f6af9ca-2a25-4e50-b4a9-2db4f01fd685" name="LordOfTheRings" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1c520387-debb-404b-a749-899bccb7a1f7" />
+        <generalsInternal>
+          <generalization Id="5a91396f-0b1d-422c-9bca-cbb6ee1f6120" isSubstitutable="false">
+            <classMoniker Id="f8427e4b-cdb8-47e9-af4f-95d951fc4d7f" LastKnownName="Book" />
+            <elementDefinition Id="4a87457a-a0b0-4210-b5f6-9b0060775711" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="76a956ef-a3cb-4da9-a884-e8b26137b290" name="Dracula" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d33f83e5-6471-49ef-855d-8a73b4e2b764" />
+        <generalsInternal>
+          <generalization Id="951ed982-52f9-43fa-b01a-651715d7cd95" isSubstitutable="false">
+            <classMoniker Id="f8427e4b-cdb8-47e9-af4f-95d951fc4d7f" LastKnownName="Book" />
+            <elementDefinition Id="f8d45a4a-0b0d-4875-a971-d1d2dd664877" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ccc5cdc5-26e6-4a84-9764-04aeee2f5148" name="Book" isAbstract="false" isLeaf="false" cachedFullName="UMLModel::Book">
+        <elementDefinition Id="d61e8b53-04cf-41cc-8a2e-f715b94f63cb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="502b2ccd-72d0-4eb7-a4d8-87cc0d2867b4" name="Book" isAbstract="false" isLeaf="false" cachedFullName="UMLModel::Book">
+        <elementDefinition Id="d61e8b53-04cf-41cc-8a2e-f715b94f63cb" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="70df29aa-4504-4c66-bbf8-6aa677a6a92e" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>

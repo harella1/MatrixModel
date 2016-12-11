@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="23c7c319-6438-4c19-a2f3-595a1d7a0c43" name="Memento.Idea" linkedPackageId="b130960e-508e-44bb-8222-31506e96338f" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="a6990d56-b7ea-4bb2-9ce6-dcf54bafa16c">
+      <elementDefinition Id="1aeef010-1d56-4696-98f8-0a1cc54f6863" />
+      <body>Intent
+Without violating encapsulation, capture and externalize an object’s internal state so that the object can be returned to this state later. Used to implement undo and rollback.</body>
+    </comment>
+    <comment Id="cdb1a7cf-ea38-4a97-b1f2-d55b1c6be4c0">
+      <elementDefinition Id="6b911cfa-d3ba-4d38-b8ed-7518b4109530" />
+      <body>Originator - the object that knows how to save and restore itself.</body>
+      <annotatedElements>
+        <classMoniker Id="a19408dd-d2d9-4483-9fc8-0a4790e21787" LastKnownName="Originator" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9bee055d-f4b2-4d4f-8a95-5101a298a7e4">
+      <elementDefinition Id="6deed0d8-3930-4f4b-bcff-28f40b8fe3cd" />
+      <body>Caretaker - instructs Originator to save and restore itself.</body>
+      <annotatedElements>
+        <classMoniker Id="67210d4a-f5a5-4e52-be90-177f2972bb75" LastKnownName="Caretaker" />
+      </annotatedElements>
+    </comment>
+    <comment Id="c0d03ecd-3484-4c80-9428-5513797366ce">
+      <elementDefinition Id="d537285f-cf97-4d36-b881-673907d8e5a1" />
+      <body>Memento - ideally can only be written and read by the Originator, but stored and managed by Caretaker.</body>
+      <annotatedElements>
+        <classMoniker Id="730abeb8-a1d7-46db-a4fd-330f8f93e3f6" LastKnownName="Memento" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f0b67c54-4e9c-4a21-8c05-c9740c91e620">
+      <profileInstance Id="68ca4d00-6f06-4425-9944-86094ade4e7b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="98eb0072-0684-4ae9-90ee-c62fb9a96303">
+      <profileInstance Id="0297b584-0501-4ebc-a9bb-f654907c29c3" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="04bfd62a-a7bd-4f57-ab4a-b69b67d68128">
+      <profileInstance Id="5fe9d0d3-9011-4bfb-9ddf-d9fd99a038b5" name="CSharpProfile">
+        <elementDefinition Id="c236f8d0-f876-4b83-bbbe-b22d6d1a6842" />
+      </profileInstance>
+      <elementDefinition Id="108aa994-3968-4d8a-ac4b-45be1fd758fe" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a19408dd-d2d9-4483-9fc8-0a4790e21787" name="Originator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97ae27f5-6ec6-4992-a768-bc4550ef99b5" />
+        <suppliersInternal>
+          <dependency Id="bd72630e-d1aa-41a0-a7a8-531ac8e21305">
+            <classMoniker Id="730abeb8-a1d7-46db-a4fd-330f8f93e3f6" LastKnownName="Memento" />
+            <elementDefinition Id="29cc88be-31ed-4c15-81a4-ee5cac5941dd" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="f0d8a838-ea68-4959-861c-6685d0371452" name="InternalState" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9a6b8b89-9fa5-4b69-826f-7314eee48620" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1ab81af8-386a-4e0c-96ff-6c0c1c7f1c49" name="CreateMemeto" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e5f6e91-8f8c-4620-8355-abc94969f42c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="16b18b35-6e31-4784-8b93-46e4bd547675" direction="Return">
+                  <elementDefinition Id="b3158542-7064-4bdb-afef-6d37c924f61c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9ce2dfdd-43f9-4b97-b01a-e9615cdd9393" LastKnownName="Memento" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="902df789-4669-4fc1-97ac-b3fffb508f95" name="ApplyMemento" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="89e5cb80-bfa1-48eb-a73e-56d09c9ee335" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b291363f-85d8-4de8-ac13-7b4a12ca128f" name="memento" direction="In" isUnique="false">
+                  <elementDefinition Id="1dc70ddd-f1dd-4bef-b2f6-7df657a46737" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2e94e469-a05e-480c-bb1c-100575627604" LastKnownName="Memento" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9ce2dfdd-43f9-4b97-b01a-e9615cdd9393" name="Memento" isAbstract="false" isLeaf="false" cachedFullName="Memento">
+        <elementDefinition Id="8486ae43-defa-4c96-ae45-d1d7924ea483" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="730abeb8-a1d7-46db-a4fd-330f8f93e3f6" name="Memento" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0630bb7d-a8fb-4e10-b56c-9cc8886b0079" />
+        <ownedAttributesInternal>
+          <property Id="0ecc3c3d-e526-4d55-aba3-ebcbc03ec8a7" name="InternalState" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="11bd0960-319d-4a83-bf34-daa98261f427" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="67210d4a-f5a5-4e52-be90-177f2972bb75" name="Caretaker" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d02e32b-9216-4fec-969e-08f8115fcebe" />
+        <targetEnds>
+          <association Id="a0e79603-77a1-45c0-ba6b-7c1010e74c58" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="730abeb8-a1d7-46db-a4fd-330f8f93e3f6" LastKnownName="Memento" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3276c411-c036-4172-ae25-cc8b6ed76dc6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5ddb7728-6221-492a-91a0-344f769e2e16" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f6280975-5ce4-4719-9ef5-ecb5637e78ea" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="1035cd8e-1ca9-49b8-a9fb-549bd02f2d47" name="Lower" value="*">
+                      <elementDefinition Id="989e0f32-bdeb-4f06-8243-7bd3a95a6ee1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c4eaa604-af2a-41c9-ae31-dd90fbca0e42" name="Upper" value="*">
+                      <elementDefinition Id="00c82e6f-90a3-4043-91c6-f87545a9f23e" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2cf0f6e1-20df-41a7-9ca7-818f09cf5317" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="93be0bb1-a050-4670-8f46-c28d2a883718" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2e94e469-a05e-480c-bb1c-100575627604" name="Memento" isAbstract="false" isLeaf="false" cachedFullName="UMLModel::Memento">
+        <elementDefinition Id="0630bb7d-a8fb-4e10-b56c-9cc8886b0079" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="b130960e-508e-44bb-8222-31506e96338f" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>

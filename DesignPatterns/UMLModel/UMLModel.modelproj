@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b48f84c3-b2b0-4d49-8bb7-2e8e539ba690}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>UMLModel</Name>
+    <RootNamespace>UMLModel</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="false" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="1. Creational Patterns\AbstractFactory.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1. Creational Patterns\AbstractFactory.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1. Creational Patterns\AbstractFactory.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1. Creational Patterns\Builder.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1. Creational Patterns\Builder.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1. Creational Patterns\Builder.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1. Creational Patterns\FactoryMethod.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1. Creational Patterns\FactoryMethod.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1. Creational Patterns\FactoryMethod.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1. Creational Patterns\Prototype.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1. Creational Patterns\Prototype.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1. Creational Patterns\Prototype.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="1. Creational Patterns\Singleton.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="1. Creational Patterns\Singleton.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>1. Creational Patterns\Singleton.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Adapter.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Adapter.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Adapter.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Bridge.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Bridge.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Bridge.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Composite.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Composite.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Composite.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Decorator.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Decorator.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Decorator.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Facade.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Facade.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Facade.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Flyweight.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Flyweight.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Flyweight.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="2. Structural Patterns\Proxy.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="2. Structural Patterns\Proxy.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>2. Structural Patterns\Proxy.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\ChainOfResponsibility.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\ChainOfResponsibility.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\ChainOfResponsibility.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\ChainOfResponsibility.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\ChainOfResponsibility.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\ChainOfResponsibility.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Command.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Command.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Command.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Command.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Command.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Command.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Interpreter.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Interpreter.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Interpreter.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Interpreter.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Interpreter.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Interpreter.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Iterator.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Iterator.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Iterator.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Iterator.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Iterator.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Iterator.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Mediator Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Mediator Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Mediator Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Mediator Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Mediator Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Mediator Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Memento.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Memento.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Memento.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Memento.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Memento.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Memento.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Observable.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Observable.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Observable.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Strategy.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Strategy.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Strategy.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Strategy.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Strategy.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Strategy.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Visitor.Example.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Visitor.Example.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Visitor.Example.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Visitor.Idea.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="3. Behavioral Patterns\Visitor.Idea.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>3. Behavioral Patterns\Visitor.Idea.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_0034.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1946.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2353.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2353.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2353.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_2353.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_0034.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1025.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1946.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2031.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2047.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2105.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2226.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2322.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2353.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\UMLModel.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="1. Creational Patterns" />
+    <Folder Include="2. Structural Patterns" />
+    <Folder Include="3. Behavioral Patterns" />
+  </ItemGroup>
+</Project>

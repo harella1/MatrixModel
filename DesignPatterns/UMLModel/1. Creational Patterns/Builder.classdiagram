@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2c282d4c-cad6-4a15-b2ed-40e15be4bad5" name="Builder" linkedPackageId="e3375af8-fbb8-4580-bca5-8a0eb73dccba" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="da4b125a-2693-44ac-a426-b008060f7ca0">
+      <profileInstance Id="81acd248-a379-413b-9009-3c70f0eb8af8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9d4b5a72-e766-455f-afd6-f03e6b61552e">
+      <profileInstance Id="5b30647a-b9db-429f-bf39-04f344790d8a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be11f2dd-6c64-45a0-a7ad-76abfaa55f22" name="ComputerShop" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b92dade3-9b2b-4b02-ab9c-93137afbcc6f" />
+        <targetEnds>
+          <association Id="9ecef0d9-a106-4f26-8c40-6abda01a99bf" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f0838701-0e8a-453b-9e94-d34b6224cd68" LastKnownName="ComputerBuilder" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27f83067-8ea8-465a-ba47-d3edaed2d96b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f6b37012-e487-45ee-bba0-6e2c0118caf4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd33874f-a8d7-4e40-b092-985793f1530b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="92f63c95-9eb4-436d-b6fc-72a065399667" name="Lower" value="1">
+                      <elementDefinition Id="20558a02-cfc3-4c57-ab6e-d3f68e0b6207" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="c5583c32-1acc-4daa-b010-be205e460708" name="Upper" value="*">
+                      <elementDefinition Id="a12d9d4d-1935-4ab9-9dff-2ec7c0e601f5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="e1f57b86-1ba9-4916-b57d-f970d878516d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="def3c6d5-0a2c-4598-89c7-c2dfb9ec4ab2" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="729d7237-5c9b-479d-8bff-5710bf3661f3" name="ConstructComputer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2cf28797-e1c3-46fa-8cc6-e74c2567bd10" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f0838701-0e8a-453b-9e94-d34b6224cd68" name="ComputerBuilder" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b851fcc6-0d2a-4821-aa26-cc17efcab203" />
+        <ownedOperationsInternal>
+          <operation Id="dda2fbe2-7b48-40b5-87fa-b77e3faae129" name="BuildMotherboard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c5d83ee7-7bd4-4215-a05a-b71ca29a446f" />
+          </operation>
+          <operation Id="f7268647-e83f-4add-b3c7-809d7e107759" name="BuildProcessor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f645b42b-6092-47b3-b2b1-e855aff29254" />
+          </operation>
+          <operation Id="f9821539-5d6b-4962-9d45-98948f13d4f7" name="BuildHardDisk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="831097ba-eeb5-468e-a258-044f9d34b1c5" />
+          </operation>
+          <operation Id="a06de967-b5c2-4a95-81c7-44eec863cb6a" name="BuildScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3003448b-d528-43a9-a7c3-ab21af7fe7ab" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="29e8fa27-45b8-4675-b455-2802a1b34eeb" name="LaptopBuilder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="af9d8945-3de6-4cd5-81f6-031e9edaf804" />
+        <suppliersInternal>
+          <dependency Id="a3f68029-b399-45b8-8a88-4c06ecd7aa9e">
+            <classMoniker Id="f6f45996-f327-4891-bc88-6312338d7c2e" LastKnownName="Computer" />
+            <elementDefinition Id="ea1e5c0e-c8e0-4c34-b73b-adafb2e9ae24" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="dcc8a0c2-0f50-485d-8558-246737665b10" isSubstitutable="false">
+            <classMoniker Id="f0838701-0e8a-453b-9e94-d34b6224cd68" LastKnownName="ComputerBuilder" />
+            <elementDefinition Id="8ea135f2-cde4-486d-84a3-898de3c32b2d" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="b4578ac2-7f4b-4971-a7c5-1a27d11afc6d" name="BuildHardDisk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e6561b3-ab65-4352-846f-218235a3edf1" />
+          </operation>
+          <operation Id="d97031c1-5754-46ec-a1cf-dbea86ea1f63" name="BuildMotherboard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e722e7bf-e871-4720-b212-0b11aae0002d" />
+          </operation>
+          <operation Id="6029c38d-9273-4cd0-9d05-d3ddba877cfc" name="BuildProcessor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="228f6a4b-18a4-422f-ba2b-d96af1f074fc" />
+          </operation>
+          <operation Id="34274af1-9521-43b4-bcaf-84c53b2d1558" name="BuildScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1827db68-2f8a-42b3-abef-5c141a0d2f06" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b4ef3d3a-1b9b-488e-9d99-0181b13a8e1c" name="DesktopBuilder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a87c4817-bc19-4086-be2d-a320c4ba5622" />
+        <suppliersInternal>
+          <dependency Id="4ffcaf99-7f43-4a48-9e5f-cea9e3e31d3e">
+            <classMoniker Id="f6f45996-f327-4891-bc88-6312338d7c2e" LastKnownName="Computer" />
+            <elementDefinition Id="a2eca679-5049-4d7c-b9ea-e6df5cc0a401" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="421cfbf8-e1a2-4057-969c-fc8326fce535" isSubstitutable="false">
+            <classMoniker Id="f0838701-0e8a-453b-9e94-d34b6224cd68" LastKnownName="ComputerBuilder" />
+            <elementDefinition Id="0a7b4293-d358-4103-a30c-122f0c9eda1f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="b16afeb5-e188-4158-9c08-c309b50fe29c" name="BuildHardDisk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1bdb194-becb-4c4e-b0a5-5db55756ddd7" />
+          </operation>
+          <operation Id="38057758-5c07-457d-bbf7-f5c36905360a" name="BuildMotherboard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf4c833c-486d-4b5b-aef0-d653acf9d697" />
+          </operation>
+          <operation Id="8e3cfe7f-b77b-47e4-8281-4eab037cac3d" name="BuildProcessor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b06c59e8-ac0d-44c4-9ac8-29a1cff98e33" />
+          </operation>
+          <operation Id="b86229e1-e019-4da2-81c0-ef74756cd9c4" name="BuildScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cbcfa363-f2f9-48bb-b02e-17dc363a8e6e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a803a708-ffcb-46f4-b92f-ef6402727179" name="AppleBuilder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0b48db7c-e987-4a41-a130-5c5c2563fdf0" />
+        <suppliersInternal>
+          <dependency Id="523df251-7167-40ae-8b38-b0c197681329">
+            <classMoniker Id="f6f45996-f327-4891-bc88-6312338d7c2e" LastKnownName="Computer" />
+            <elementDefinition Id="ba15e9f0-9712-4df0-befb-32980ce141aa" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="e3b0d860-810e-4e02-a42f-e58861c45a23" isSubstitutable="false">
+            <classMoniker Id="f0838701-0e8a-453b-9e94-d34b6224cd68" LastKnownName="ComputerBuilder" />
+            <elementDefinition Id="2988f54a-d960-4d8c-ab0e-d228ec0aa945" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="25fc3eaf-be8f-4939-ae9b-6b7822f7330b" name="BuildHardDisk" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="31896ccd-2ecb-4779-acb4-bdecbed13422" />
+          </operation>
+          <operation Id="a5aaaebe-eb28-4f39-9a9a-f4eb031733b0" name="BuildMotherboard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="edf84778-d5a1-4313-9feb-43ad4c04382e" />
+          </operation>
+          <operation Id="09940df0-df63-47bd-9658-0f5a036c478f" name="BuildProcessor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0954fa62-628c-4151-8c40-6628a96cf109" />
+          </operation>
+          <operation Id="7b6f56a6-bf56-43e8-a13b-3a08f8fe8a78" name="BuildScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cffd0b57-5acb-41a4-991f-e6328d359809" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f6f45996-f327-4891-bc88-6312338d7c2e" name="Computer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1cfa4992-01a6-4123-8d23-cbc562a06a24" />
+        <ownedAttributesInternal>
+          <property Id="887ee206-f59a-4bc7-94da-428ae05e99ff" name="MotherBoard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="23069515-5207-4b0f-a26b-8a58fe7088a9" />
+          </property>
+          <property Id="83642e96-0954-4c53-aebe-6c6510ff23fd" name="Processor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7af31496-cacc-4d78-8320-45e861f98548" />
+          </property>
+          <property Id="c2f642fc-ba39-4266-85ce-5c3e787a5d10" name="HardDisk" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6efcf287-fe5d-45bf-ab60-f1155a94633b" />
+          </property>
+          <property Id="0663e8d1-2411-4e73-91a1-331b35d26719" name="Screen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="76713fae-00de-4789-8994-e31d5a0072b2" />
+          </property>
+          <property Id="badf13fe-76c8-4b4f-9caf-f38fc94ec431" name="ComputerTyp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d39b859a-7ea4-44ad-bcfa-0a1a26b74a58" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="89d7ced4-197c-4167-9237-317cd51f8798" name="DisplayConfiguration" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="151cfa06-a235-4ef3-8e76-a9c48e0cb0dd" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="e3375af8-fbb8-4580-bca5-8a0eb73dccba" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>

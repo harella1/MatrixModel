@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2150db99-6878-41b0-93b0-d72fd5d26768" name="Adapter" linkedPackageId="62006e9e-c287-4db1-9916-9e3d4a9d6738" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c385b226-787f-483a-a764-a69b79b53905">
+      <profileInstance Id="6f1ed213-7e94-41e8-913b-213477082d7a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b988980f-b652-4ab2-81e4-aa1da572eabd">
+      <profileInstance Id="90738abf-239c-4f61-92e6-c795fbaeef4f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="55d87268-928b-4256-aca8-0e8e5d406f6b" name="TradingDataImporter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="12e94b12-e90f-4249-a48c-c76413e29000" />
+        <targetEnds>
+          <association Id="78e7562d-bfec-4be3-ac57-327ad56911ee" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2aaee76c-ce1e-4fa1-823a-caabe99b16e1" LastKnownName="Connector" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e37e482-9d14-456c-b90a-252dc8dcf183" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cefa1513-5e8b-4e7d-85a1-2417a1d1f84b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec64e199-9989-4af2-acb3-9c3e9652a761" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4fd8e18d-85e9-42c1-9897-bb09a3741c8b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e6c2ab1-da75-4f53-86e5-1fbcd144e311" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="4ff73826-8418-4d7c-b0fb-99e472f8933e" name="ImportData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c7059d2-6158-476d-a73f-69d0254b0577" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2aaee76c-ce1e-4fa1-823a-caabe99b16e1" name="Connector" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cc2df3e4-dfba-41f3-afd5-7c411ecda5f5" />
+        <ownedOperationsInternal>
+          <operation Id="780af1f7-cabe-4ade-ad77-12e4cc3119f9" name="GetData" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0f7b3e5b-a271-4f7f-b9df-ed8312410c99" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9b223c50-376c-4a34-8a18-b79484b7ea0c" name="HttpStreamConnector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="00a90245-265d-4e61-a003-4ca20b3bab56" />
+        <generalsInternal>
+          <generalization Id="cd8fff69-0856-4d02-b648-9c60e23938c2" isSubstitutable="false">
+            <classMoniker Id="2aaee76c-ce1e-4fa1-823a-caabe99b16e1" LastKnownName="Connector" />
+            <elementDefinition Id="efcdfdd7-1357-4aec-8867-b1f7271d2284" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e4eb2590-b90a-43a0-8bc6-4921a945a343" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6cccdeb1-cd1a-4ec2-a023-805c28508a8e" LastKnownName="WebSiteScanner" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2aa407d3-806a-4edb-a8c2-ef6f29aef793" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="77ee64d8-f8f9-4c04-88d7-776ce31a0e6c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c7aa1e5a-9587-45a3-83b2-d4a460aa0be2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="39b0e962-7a00-47ab-b05d-5c0d6fc0d744" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="60ce4c99-0adc-4ad9-b0a7-c76e291a3a07" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="6e099a01-bace-4211-bfb0-8eba73d1e7c8" name="GetData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6bb7262b-2c89-498e-955d-5e077a6506ea" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6cccdeb1-cd1a-4ec2-a023-805c28508a8e" name="WebSiteScanner" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c2f55b36-7e75-49ae-a1da-24ae4971d908" />
+        <ownedOperationsInternal>
+          <operation Id="1e893e0a-7169-4def-8ca3-b9abd079bea6" name="Scan" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="092ce054-4664-4b49-babb-f0004500490b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="518a9e7f-b36b-415c-a41c-9889458ae1f5" name="XmlFileConnector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9691c50b-8548-4e8d-96cc-dd19566a8c94" />
+        <generalsInternal>
+          <generalization Id="8461c202-7666-4f7c-91ff-5e35a3ab8bb2" isSubstitutable="false">
+            <classMoniker Id="2aaee76c-ce1e-4fa1-823a-caabe99b16e1" LastKnownName="Connector" />
+            <elementDefinition Id="aaea2cbc-453b-43d2-9731-d0fac398cd2f" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="99048d58-b05e-4e31-92e2-c1bc450a0f99" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2c16b8e9-86d4-4126-83ba-5ed02da3a1e7" LastKnownName="XmlFileLoader" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c8d271d1-4334-405b-b045-d1cdb3be28c2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0cd93f52-f5be-40d1-890d-b1efc641046a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6891a16c-c544-4444-bbef-5f0964255752" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5bcc7ed1-1a70-4d94-902f-5271100a2041" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="da6e62df-f759-4f23-adff-824bd45077ef" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a95c96c7-45a2-419f-8655-6b7a57d8a9ab" name="GetData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9bd37acb-a37d-4ebb-ad1a-3731885711f3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eec43dca-d677-44fd-a6ff-3f5718d7d21d" name="DatabaseConnector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69fbd803-38f0-488b-95c3-c73aab25339f" />
+        <generalsInternal>
+          <generalization Id="056aa860-0eb8-4178-afee-3866f5107659" isSubstitutable="false">
+            <classMoniker Id="2aaee76c-ce1e-4fa1-823a-caabe99b16e1" LastKnownName="Connector" />
+            <elementDefinition Id="5a9fc281-cfa5-48a0-9645-b64a91489d55" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="db69c48a-e962-4fee-9697-fa09d79cbedf" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5de4119b-7eb9-491a-b08c-73f368cde1c5" LastKnownName="DatabaseHelper" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac158ef0-1664-4373-a0d0-983192f5a651" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="63563ddb-793e-42c5-839d-8c5ef168d8e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="da9e1e19-aa53-45ef-91e4-32579768523a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="701d1a74-6622-452b-b18e-9ac9601fdcbb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9715dc3f-dfa3-4faf-beb5-f4625f10abc8" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="b1ddc0f2-0b55-4912-a891-08e94abfccf7" name="GetData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1be5f0b6-ab28-4335-8b2b-ca8b66e6ecbb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2c16b8e9-86d4-4126-83ba-5ed02da3a1e7" name="XmlFileLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="20d65fb1-00f9-4647-82fb-234c3c412507" />
+        <ownedOperationsInternal>
+          <operation Id="38591e74-d37e-4ebc-b140-127579505278" name="LoadXML" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6f487b66-5df8-4034-9995-3fe7260701c9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5de4119b-7eb9-491a-b08c-73f368cde1c5" name="DatabaseHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="499dc2bf-3249-4ae5-84e1-c1e3a64ceaae" />
+        <ownedOperationsInternal>
+          <operation Id="f43d3334-8ca2-4335-9549-9e8d8fd6bbf1" name="QueryForChanges" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7d633d99-18e1-45aa-a3b1-dc2f18ffe722" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="62006e9e-c287-4db1-9916-9e3d4a9d6738" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>

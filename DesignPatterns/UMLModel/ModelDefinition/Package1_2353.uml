@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c9363daf-b1e7-4d14-8211-1449d1264f88"
+  name="ChainOfResponsibility"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4363069e-1d9c-4773-ab92-49793c5f8159"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=DesignPatterns.ChainOfResponsibility"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="a54bb2cc-2bf2-4e66-b380-fb2aa8d3f6d9"
+        name="LogLevel"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="f9bc2b81-4dbc-421f-9ff8-e431ab14bf28"
+            handle="viewcode://./CodeSchema_Enum?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="556de822-2b92-4dcb-b11a-dacca685b99a"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="943a0c69-50fa-4e45-a58f-0ce98ac0bb71">
+                <propertyInstance
+                  Id="aba0fce7-f40d-4b83-b59b-4145adb85ba0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6482b70b-ba2d-4a01-944e-e8b20fd183d2">
+                <propertyInstance
+                  Id="2b359f30-7d21-4456-ab4f-48a07105c641"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8170560e-3dd0-472c-93fe-7e97a14f922a">
+                <propertyInstance
+                  Id="51119537-2bc4-40ef-a051-e7cb19943ef4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="5b52150f-6fd0-4f9c-8677-cafa90e75b2b"
+            name="Error">
+            <referencesInternal>
+              <reference
+                Id="d56f79fe-2c5a-4471-be56-5bcce69a9303"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel Member=Error"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="8db3729d-90d2-4f0f-8262-2f8fdcddda43"
+            name="Info">
+            <referencesInternal>
+              <reference
+                Id="c1372995-81eb-4854-b720-a2ca457f12de"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel Member=Info"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="dc8e6c95-628d-4fb8-96f7-3e4a4224544f"
+            name="None">
+            <referencesInternal>
+              <reference
+                Id="e6cde33f-3d41-4f5a-a5d0-9edf789828fc"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel Member=None"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="5d5015d5-a9ba-4d7d-8c54-b39166d49f62"
+            name="Warning">
+            <referencesInternal>
+              <reference
+                Id="981b76e7-7897-4aec-b50f-7ef9a6707d85"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel Member=Warning"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="622a576d-6c15-4f20-be24-e05b62126add"
+        name="MemoryQueueLogger"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3f3a6d0a-0e38-4029-98ff-6f25b31e513e"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=MemoryQueueLogger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="00624c40-6af7-49f2-b23f-3053af01ca84"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8317bd7-449a-41b2-8b15-a4ea62be0ebb">
+                <propertyInstance
+                  Id="d75e681e-4c66-4cb9-8c28-93430a7e2862"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0203815b-9e24-498d-8d3b-851bf5df2cfb">
+                <propertyInstance
+                  Id="e60647f0-5b2d-46d0-b050-2833ea1117d2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a47e209d-3983-4cba-8b07-d40ae6fdd7b7">
+                <propertyInstance
+                  Id="00777040-d54e-451e-a9d6-97b5cbca9248"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6eee1764-4f08-42c6-a888-48991ecfc09b">
+                <propertyInstance
+                  Id="f221c018-4314-49bd-a0cb-c66aa993276a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="003ebaa1-18a9-468f-ae7f-f9dbb0e5da4e">
+                <propertyInstance
+                  Id="e186315f-bb7e-4906-af66-5f43af8d774c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="c41a8eb8-55df-42c0-83c8-7fdb70b1c534"
+            isSubstitutable="false">
+            <classMoniker
+              Id="750e07cc-4bb1-4dd6-a61d-30d115fc327b"
+              LastKnownName="BaseLogger"
+              LastKnownLocation="Package1_2353.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="17d530b2-b3b7-4827-a27a-5d6ff415ccf7"
+            name="PerformLog"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="daf3dbb2-e800-4bcd-8d4b-337f4c00e822"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=MemoryQueueLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="04847f16-8f0e-4417-94c5-1353aa91f1a5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b369ee54-a415-4e54-bc51-31f036d6dc31">
+                    <propertyInstance
+                      Id="00b27a68-21bb-4ad7-ad51-46cf0f2fe8d8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17b2f91d-2120-44fc-a4ca-c08d7a435d3b">
+                    <propertyInstance
+                      Id="09ff8892-7413-4b48-8cd6-d1f7d1168b63"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84555183-8efe-42c6-b48a-3730539ce3d4">
+                    <propertyInstance
+                      Id="35f712c7-f7e2-43cb-b39e-92913c1d9b25"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="581abe32-094f-461b-bdca-964d6c385f6c">
+                    <propertyInstance
+                      Id="d07f7eb8-a106-4b93-b82c-ee99ba6279fa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="733c4691-52d2-44b2-89a8-32f2056e76cc">
+                    <propertyInstance
+                      Id="ed852754-97c2-47f0-b5aa-a505bd07ab8f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f3c1099-8843-43c9-abf5-1b5c1e7fd9c3"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c56746b5-3789-47a6-8f40-ba0c17c3c613"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=MemoryQueueLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="750e07cc-4bb1-4dd6-a61d-30d115fc327b"
+        name="BaseLogger"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9e6d0a69-9425-44a9-a46b-f2113a7349e2"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="45fdb156-b96c-4907-8123-1266a8b8a752"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3cc2f704-eaca-41f3-9f65-e90f15530e81">
+                <propertyInstance
+                  Id="bff884b4-f65f-459f-a2be-30ed0d8c6d5c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1cbcc525-693c-4808-941a-fd768708ee90">
+                <propertyInstance
+                  Id="8b2fff76-a924-4aa9-84e0-5cd122abd3e8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3431f3ee-5fc1-45c8-aacd-ef831297522f">
+                <propertyInstance
+                  Id="4a0bf764-2161-4353-9c4a-bcb3e1c8cfff"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b450ed31-fbd9-4c72-8e76-3baa970ef1a0">
+                <propertyInstance
+                  Id="2f037217-a640-45d3-bf6e-068432dc59f0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="404235c3-b17a-4cac-b526-510ae3d8a4bb">
+                <propertyInstance
+                  Id="77b4a081-8d6d-437e-9faa-ff565c782d3f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ee8206ad-a496-4b87-a31f-a419cd5d346e">
+            <interfaceMoniker
+              Id="28b0f63a-479a-4c4d-8ba6-a64a1ba1841a"
+              LastKnownName="ILogger"
+              LastKnownLocation="Package1_2353.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="6bb245bf-eb93-42fe-a634-6c9f2763802d"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="Next"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="750e07cc-4bb1-4dd6-a61d-30d115fc327b"
+              LastKnownName="BaseLogger"
+              LastKnownLocation="Package1_2353.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5bd033df-ffa2-4f4b-bd96-a6a056292475"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="20c3f36b-149d-4e3a-8885-99e01244b027"
+                  name="Next"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5b555f73-d5ec-4e06-a49e-98e5c289a7c4"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ffc418c1-5185-4d64-a86d-5ea64d4c1a02"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="96fe2827-1681-4b08-ac1f-d75697448030"
+            name="Next"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8532281f-bc96-4677-ab20-2fae8876da4d"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=Next"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9282a475-3ee9-46f9-aa2e-cf65b67dfe85"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f498856-f14e-4d95-b678-9b80512ce43b">
+                    <propertyInstance
+                      Id="8f133339-ad21-4dbb-a49d-6f49d8af6b1d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ddf6b296-12d1-427c-8ee9-7db37576f428">
+                    <propertyInstance
+                      Id="383b959f-4d2f-4447-913c-c8ed26bc5eca"
+                      name="Get"
+                      value="protected" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50f482e9-3d60-47ec-b345-0ebce72ab71f">
+                    <propertyInstance
+                      Id="a09c30d1-0542-4781-88ab-fb4facdfc126"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df819b57-7fc2-46f1-a480-2bc918e953b8">
+                    <propertyInstance
+                      Id="420db2ec-bccc-4101-8342-0eea7379e080"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69ded5ed-91b9-4509-9a15-6c0ecdf81de8">
+                    <propertyInstance
+                      Id="f13f7ea2-af99-4315-a550-3a2d4d4666c5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9886d117-cddf-4a66-b2b1-d7a0292a64a2">
+                    <propertyInstance
+                      Id="7f7656ac-f6b6-4f6e-80c3-755abfee3822"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="28b0f63a-479a-4c4d-8ba6-a64a1ba1841a"
+                LastKnownName="ILogger"
+                LastKnownLocation="Package1_2353.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="360dcf9c-d0db-4d85-a63a-68092cad2243"
+            name="PerformLog"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1442408d-71fc-4c7f-a703-1621d8b990c6"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0fe4bd63-dde8-4367-833b-c65e4b95d6d4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca96228c-4739-4da7-af63-7ec35d6e1734">
+                    <propertyInstance
+                      Id="4bc8e618-ea53-4ac0-8654-4a624bb0e467"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd5b26e6-55ff-43c8-a4db-e6066509806c">
+                    <propertyInstance
+                      Id="98f0e825-1bc9-4f30-a913-ca815ef31700"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bdf178f5-ed6f-4c5c-8f7d-b05106676ec9">
+                    <propertyInstance
+                      Id="6a89e9c7-789c-48bc-a725-8727fdfdb9a6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e363e86-7dc1-498f-9033-08a4ec7b4381">
+                    <propertyInstance
+                      Id="be03586c-1486-499f-a384-49fd28a48850"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="945f850b-6a7c-4890-bdef-0e41e2ba3a15">
+                    <propertyInstance
+                      Id="458b0c9b-6c8c-4251-83c9-81edd1f92859"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75e7a4cf-ae21-46c5-af44-88d8e3a5f18d"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7b60a4a8-fae9-47d7-9d7c-c9f3ae8080a7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="25a99d82-627a-47ea-bb6f-ab60035631ee"
+            name="Log"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="de8c239c-913c-4847-8278-86b396e993d7"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5f468b3e-a825-4f38-a561-a41ad3412f85"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4459452-52f7-4c25-8270-dc410e3967d9">
+                    <propertyInstance
+                      Id="3b26e6d9-6b30-4ede-b9ef-2d9fd037fa87"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d74a4d5-119e-413a-9d81-30430f6db657">
+                    <propertyInstance
+                      Id="f50fa829-15b6-4ef1-bdc8-4824811c87f6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ffff185-277e-4889-b55b-4475b64b5c96">
+                    <propertyInstance
+                      Id="c30ca4be-f9a5-40a1-9de0-8744c85e9b85"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c62a9c8d-2381-4607-8b29-abb61ff0d8ed">
+                    <propertyInstance
+                      Id="152453ab-7a0e-4c60-a93d-4f37fa12b0a7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00bf0491-58e0-417d-b81a-9f352c7698e5">
+                    <propertyInstance
+                      Id="fcb04966-32aa-4b1f-b74c-22eed6ab727b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c6f2bbed-3ce8-4f78-8ae5-379bf1c23595"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e84eb53d-d6a3-4be1-996d-81c77b3d4bc1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3db6ac35-4c4c-4b08-a07b-8dc0eb782c86"
+                  name="severity"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="454605b8-d229-4854-a977-8f6c3a607959"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)]) ParameterIdentifier=severity"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="a54bb2cc-2bf2-4e66-b380-fb2aa8d3f6d9"
+                      LastKnownName="LogLevel"
+                      LastKnownLocation="Package1_2353.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7c880c02-282f-48f6-840a-e6799b4ca19b"
+            name="SetNext"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="97a67a9a-adba-4eba-8f44-7d526dbd53a9"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=SetNext OverloadingParameters=[(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e3bb3f32-a6d8-4a1b-97e8-4014a40f59a9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1c394ef-8cfb-4c90-8ce0-53aaea5b4d94">
+                    <propertyInstance
+                      Id="be624ec7-7be7-475a-9cc1-289f869758ef"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="346cff92-5f8a-478d-9888-25b3a23f3585">
+                    <propertyInstance
+                      Id="03b8ff0e-5b6d-48cf-8dac-f78dfebaffce"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0197b3e-d6a1-4905-87fe-25ddd6a88ef7">
+                    <propertyInstance
+                      Id="50081b8a-b6c4-425c-a6a0-d1edd129d2da"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28f6b5ca-ee69-4c85-9d57-2db4ce8177b6">
+                    <propertyInstance
+                      Id="92426410-7f56-4c46-8a78-82abaed24492"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a0da33f-9030-4182-ad83-c71dcd88fd6d">
+                    <propertyInstance
+                      Id="3698e8a3-aa04-49b1-985a-d8fd26bc848a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4fa5a4c8-ebc2-4919-8231-08574e82ec14"
+                  name="nextlogger"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4c0419fb-54ae-46a4-a2f0-57bf264ed863"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=BaseLogger Member=(Name=SetNext OverloadingParameters=[(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger)]) ParameterIdentifier=nextlogger"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="28b0f63a-479a-4c4d-8ba6-a64a1ba1841a"
+                      LastKnownName="ILogger"
+                      LastKnownLocation="Package1_2353.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="28b0f63a-479a-4c4d-8ba6-a64a1ba1841a"
+        name="ILogger"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="c1b5401e-270f-4b2b-b9e3-1c3f704237d0"
+            handle="viewcode://./CodeSchema_Interface?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9257baf2-35aa-443d-acb1-b34b94b3537e"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8474854b-c784-4b0c-afd2-3641d3a3452a">
+                <propertyInstance
+                  Id="ecdc8c1d-7ea9-439a-8b06-59c50b7cf093"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="adf85b15-3ebe-430c-b91c-bf5b563cb85e">
+                <propertyInstance
+                  Id="aa32a5a1-d07a-4b12-9a04-f1be60fd3ce3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b61955c-8ef8-4f1a-b686-35d7710a1d10">
+                <propertyInstance
+                  Id="de9d4926-acd8-4a4b-860a-a8a79bf1a269"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccceacd2-979c-45fe-ad5f-ea2733ba57c6">
+                <propertyInstance
+                  Id="879cb3a1-f307-4971-b481-d066fa1c76d6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperations>
+          <operation
+            Id="414854bb-e86e-461d-b609-d59f509ccbc2"
+            name="Log"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7a2256a4-fc18-45db-b854-3b4bad1f9981"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f58f87c9-55ad-4056-bcbf-310b5655c226"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a570ae9c-b9e9-4a65-b7d4-2d8a37916ebe">
+                    <propertyInstance
+                      Id="4b681304-7537-42db-9dc2-17feffec3a6d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f85fc92-ce77-4664-ad08-97a59ae117dd">
+                    <propertyInstance
+                      Id="c914047a-96c0-42b1-8fa3-8588a8d8ddfe"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48ea90f6-20b7-4143-89d0-7b0402b6abb7">
+                    <propertyInstance
+                      Id="865078fb-08a2-417f-816e-d18cc8459535"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad6bbc60-100c-42fd-9131-444ae030b3bd">
+                    <propertyInstance
+                      Id="c19448c4-59f4-475c-b49c-63e24fa96693"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32b8602a-942b-4efc-8b0d-ab274fbd69d9">
+                    <propertyInstance
+                      Id="fef0545c-e587-4cc2-a3d4-cfe76b9453cd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="79b789cc-dc3b-4598-9f73-f6484a58d0d3"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="05c75c61-be96-4114-8604-6bb975b15050"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6da768b0-4f10-4cb1-867c-ee31326035bc"
+                  name="severity"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5271b189-4f5b-4160-9aa0-c8f431912004"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger Member=(Name=Log OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=LogLevel)]) ParameterIdentifier=severity"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="a54bb2cc-2bf2-4e66-b380-fb2aa8d3f6d9"
+                      LastKnownName="LogLevel"
+                      LastKnownLocation="Package1_2353.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="25b45f3e-e8ff-465f-a76d-96cc6b83bba8"
+            name="SetNext"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="39c3e03b-1b87-4eaa-b246-d8a081a451ea"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger Member=(Name=SetNext OverloadingParameters=[(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6f89a207-727d-454b-952f-96576631041f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8c6ad6c0-f357-40cd-b077-4eeafdadbb34">
+                    <propertyInstance
+                      Id="dbfeeeda-ca98-4f91-ae66-c13636caca45"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42ec3641-3b02-424e-9fd4-44b0a3006006">
+                    <propertyInstance
+                      Id="82847eff-dfa2-48c4-b89c-658290b19f51"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5345dee-48b0-4b0c-bb65-a44b99b7b149">
+                    <propertyInstance
+                      Id="2709cf13-1d0d-4234-8767-d8a9e95dea92"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40d9bc59-fa3a-48c4-a964-2bb9a99eb353">
+                    <propertyInstance
+                      Id="c15e4d5d-c8c7-44cf-b259-7f15ad6f3da3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b02a35e8-017c-4319-bf92-f96a972686ba">
+                    <propertyInstance
+                      Id="7b09450c-ee49-4ff9-94dd-518149e9ccf3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc38b1f6-06e8-408c-9635-9c53ee7aedb7"
+                  name="nextlogger"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9814bf2d-39e6-4130-acf3-547de0dc3bde"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger Member=(Name=SetNext OverloadingParameters=[(Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ILogger)]) ParameterIdentifier=nextlogger"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="28b0f63a-479a-4c4d-8ba6-a64a1ba1841a"
+                      LastKnownName="ILogger"
+                      LastKnownLocation="Package1_2353.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="720ae1ce-ec22-4cb4-8b65-9fdf3b829d15"
+        name="ConsoleLogger"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6cb141a4-98f8-44c6-bd68-3fb4be0be5be"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ConsoleLogger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="48c32d37-b035-4d0e-a18d-9eca40331251"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="18380f20-82ab-49a2-83c3-365c9806c417">
+                <propertyInstance
+                  Id="05e81ef5-c298-4864-ac47-014635d9e169"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="19f8f17d-38cb-4eac-b182-fc9e52931b67">
+                <propertyInstance
+                  Id="f4296f6d-ccc5-49dc-88db-5f129ddd3f4e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0e577bcb-1dd2-4440-8638-73b028cfd687">
+                <propertyInstance
+                  Id="5b7eb079-cc6b-4571-92bc-7e51c3d63cfa"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6573c987-c2dd-4570-935c-842f465140a3">
+                <propertyInstance
+                  Id="79d2de31-6350-4193-9b96-655a76b2a7c6"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1dec4431-a665-4bde-ad5a-be75d5bfc371">
+                <propertyInstance
+                  Id="25b6da02-d189-410c-8bfa-87900679fe4d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="0b6eb5df-a279-44e6-9b67-5430b09c522a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="750e07cc-4bb1-4dd6-a61d-30d115fc327b"
+              LastKnownName="BaseLogger"
+              LastKnownLocation="Package1_2353.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cf002031-4fd2-45cc-abae-90d778cf3be4"
+            name="PerformLog"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d59330aa-7a0a-44ad-84f9-5077e5110431"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ConsoleLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b23aa182-6b1c-4cd7-b9dd-190daa0d932a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fb38889-4e6f-4f83-aaa2-07ee2bb31415">
+                    <propertyInstance
+                      Id="f99df945-7da4-4ec0-b3bf-51915459d650"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4046b10f-f7d6-4fff-8e68-cd20adb0fbbd">
+                    <propertyInstance
+                      Id="8ae37cdd-6523-45cd-8fd8-234eb8a8afb5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dbba21ba-663f-44f3-9817-4775a904c5b2">
+                    <propertyInstance
+                      Id="9ced1511-8092-4d1e-8241-6507ffe243a9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f017090-2d69-40df-86a4-7131b444e718">
+                    <propertyInstance
+                      Id="1aa853ca-fd16-4824-82c0-46bb123c7e6a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c146f84-521e-43f8-8994-c87d51776634">
+                    <propertyInstance
+                      Id="9bf09b1b-c8e4-41b7-ae0a-69a452ea7538"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="33acbd39-029b-4a7b-8095-157e3051eb13"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c608e2a2-cb33-4bc8-a620-7d7b78b0b6ca"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=ConsoleLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0b53bbab-8b6d-45d5-bc1c-aef404d5a572"
+        name="FileLogger"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8c2fea10-4e2a-4d55-b0c9-6844b7058acb"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=FileLogger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b0577147-5c71-4b70-ae0f-1b4db85907fe"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47d38b8a-3e92-4af7-87ad-755d32e6ba62">
+                <propertyInstance
+                  Id="a645c73f-21d2-4c51-8963-36f74172b888"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d2933946-41fe-4bf7-91e1-fd49de1fd00f">
+                <propertyInstance
+                  Id="6af2adbe-b9f6-4860-8ec3-7b118db71f3f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72ebb61d-0c50-464f-9307-f408d48f0671">
+                <propertyInstance
+                  Id="1bbcd5dd-c57c-495d-a71b-41ee79ad8582"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="32c88a28-c179-49d2-9dff-af5a3d95e818">
+                <propertyInstance
+                  Id="8c6249a7-cb40-4c2e-ac38-9a02baf0dcb8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f62aa2fd-4d3b-40d0-83ff-2d07b2b76fe0">
+                <propertyInstance
+                  Id="da301e4d-08a8-49c9-bd1b-4aa5ce58386d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="4c3670b3-c4ec-42d8-82a4-99a12a598e07"
+            isSubstitutable="false">
+            <classMoniker
+              Id="750e07cc-4bb1-4dd6-a61d-30d115fc327b"
+              LastKnownName="BaseLogger"
+              LastKnownLocation="Package1_2353.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="fc17a6f7-e8dc-4553-bcc9-0319c29fb9c6"
+            name="PerformLog"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="96af7d74-e8d3-4512-a978-d5dc3f8bae4c"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=FileLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="990f0e19-8fee-4104-b8cc-edc02e2174b1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6459c5dc-606c-49b4-b94d-4988acbc3548">
+                    <propertyInstance
+                      Id="55895b73-2825-4e1b-bcac-d51919b7bd03"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5d9ab62-b328-488d-adec-d7e03a540af2">
+                    <propertyInstance
+                      Id="a3429661-fc26-453c-b089-28fb9d56d8e4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed1f6c58-e073-4f22-a3a1-fb114b3b72d6">
+                    <propertyInstance
+                      Id="68c7187e-72ae-45c3-b6ec-1c1452a8c66e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e12b502-3034-4ba3-a6e9-73f47dfe3fff">
+                    <propertyInstance
+                      Id="a4633e28-4c52-4941-97da-b1f114ed0928"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69d2bdad-740f-45c7-a749-98dc5af5c9af">
+                    <propertyInstance
+                      Id="29371e9d-87a6-4633-9400-3d8934d1af0a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="72ac6c43-df26-4036-8d45-d1540a55cd51"
+                  name="message"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="28a03063-0707-4563-9627-3cc5387864b9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///D:/codeplex/DesignPatterns/DesignPatterns/bin/Debug/DesignPatterns.exe Namespace=DesignPatterns.ChainOfResponsibility Type=FileLogger Member=(Name=PerformLog OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=message"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UMLModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,30 @@
+﻿<melody>			::= <melodyexpression> {<melodyexpression>}
+<melody expression>	::= <note> | <set octave> | <set duration> | <pause>
+<note>				::= <natural note> [<modifier>] [<duration>] [.]
+<natural note>		::= C | D | E | F | G | A | B
+<modifier>			::= <sharp> | <flat>
+<sharp>				::= # | +
+<flat>				::= -
+<duration>			::= 1 | 2 | 4 | 32 | 64
+<set octave>		::= O <octave>
+<octave>			::= 0 | 1 | 2 | 3 | 4 | 5 | 6
+<set duration>		::= L <duration>
+<pause>				::= P [<duration>]
+
+
+Grammer correponds to a music notation which was supported by nearly everybasic dialect in 90s.
+See: http://en.wikibooks.org/wiki/QBasic/Appendix#PLAY
+
+The tones are indicated by letters A through G. Accidentals are indicated with a "+" or "#" (for sharp) or "-" (for flat) immediately after the note letter
+Ln     Sets the duration (length) of the notes. The variable n does not indicate an actual duration
+       amount but rather a note type; L1 - whole note, L2 - half note, L4 - quarter note, etc.
+       (L8, L16, L32, L64, ...). By default, n = 4.
+       For triplets and quintets, use L3, L6, L12, ... and L5, L10, L20, ... series respectively.
+       The shorthand notation of length is also provided for a note. For example, "L4 CDE L8 FG L4 AB"
+       can be shortened to "L4 CDE F8G8 AB". F and G play as eighth notes while others play as quarter notes.
+On     Sets the current octave. Valid values for n are 0 through 6. An octave begins with C and ends with B.
+       Remember that C- is equivalent to B. 
+Pn     Causes a silence (pause) for the length of note indicated (same as Ln). 
+.      When placed after a note, it causes the duration of the note to be 3/2 of the set duration.
+       This is how to get "dotted" notes. "L4 C#." would play C sharp as a dotted quarter note.
+       It can be used for a pause as well.

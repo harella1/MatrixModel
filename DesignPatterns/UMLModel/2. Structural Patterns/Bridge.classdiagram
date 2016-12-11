@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="36bb7968-ea17-46ff-946f-89febad8db9a" name="Bridge" linkedPackageId="888832e8-8d44-423c-b0c1-9063e258319e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a30b7633-118b-435f-969a-d377ca9f8093" name="Repository" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6058efd6-00dd-42c9-b36a-0ef844545682" />
+        <targetEnds>
+          <association Id="59c3e883-8286-4b86-8cbe-e97efe326f44" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f9cbe067-eb11-4cf5-bb6f-1f736a376aa7" LastKnownName="DataObject" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c10667d9-d2d6-4401-bd0e-5555ba159836" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3904f81c-0d8e-4b01-a000-54bae984fb4e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="716e3836-4fa1-4a9d-adcf-b0c2d7b88c20" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9f48f2dc-b3ce-40fd-83cb-10323ecc6947" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b6d423fb-80cd-491b-93e2-94d94f583be5" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="37bdcb88-2486-4160-8969-f09d7d1288a5" name="AddObject" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e0e72b3f-6700-4f24-9d9c-4beaa7e27232" />
+          </operation>
+          <operation Id="34c877ea-0c74-4a77-a6d8-d0a5c634145c" name="RemoveObject" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4cc62228-b8f9-4cd7-8344-db28bf572243" />
+          </operation>
+          <operation Id="d9b97ad6-e755-4008-8143-b2fc3f52fbd1" name="SaveChanges" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="35e5cf28-2430-4a6e-89cb-d943a2576a0d" />
+          </operation>
+          <operation Id="cd5476fb-0a81-47ca-ab90-f0d46ea63634" name="CopyObject" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d90b2df-c1ee-4a5e-abe2-42445463fd8d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dc2d7eec-fb24-4f7c-8c87-0b16b0c76e38" name="ClientRepository" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="726f775f-ae8c-4b0e-a31c-c5b9a15251bf" />
+        <generalsInternal>
+          <generalization Id="3f328780-f916-4e10-97f4-af762356bc5f" isSubstitutable="false">
+            <classMoniker Id="a30b7633-118b-435f-969a-d377ca9f8093" LastKnownName="Repository" />
+            <elementDefinition Id="3e69681b-c5d8-48af-bebe-ab64325b9f16" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="26e48f60-f2a0-44f8-8442-28487c97d584" name="AddObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8264c70b-a13a-4fb3-8ab7-30f5f3e977ba" />
+          </operation>
+          <operation Id="dc432dd5-d3e2-409f-bfc4-29085c58d104" name="RemoveObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9bddb7f2-27ac-4cca-a490-bf065672f219" />
+          </operation>
+          <operation Id="b7f9f0a8-a9cd-46ae-b750-eb57a5ded234" name="CopyObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d323a331-6846-4475-aba6-ff215cfad058" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a8f74869-c728-4f79-b6e7-fc9f91cfaba5" name="ClientDataObject" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8095abef-b304-4bf7-9bdf-0829e8cdfc7d" />
+        <generalsInternal>
+          <generalization Id="3db95c7b-d3e6-4ee4-ac08-1a7d8aefe278" isSubstitutable="false">
+            <classMoniker Id="f9cbe067-eb11-4cf5-bb6f-1f736a376aa7" LastKnownName="DataObject" />
+            <elementDefinition Id="3e8f4bed-2dbe-4dc2-acf7-8c760c85d144" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="eb0e9bde-c620-4fe7-85d1-f597c0ef48a0" name="Copy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8693d0e2-7291-4ba5-92e5-96af0fadafdb" />
+          </operation>
+          <operation Id="7c72426b-0184-4fbf-bf39-f7679a6d1deb" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e137679f-6420-4d5f-a123-40e3790b467f" />
+          </operation>
+          <operation Id="2c860fe3-3246-4b8f-8d6e-6a1142f7f544" name="Register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27534488-ccb8-4c09-a191-e6c1e5b2d21a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6a7c4a44-fd9c-464a-be15-6b6a857d286b" name="ProductDataObject" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5ce99405-582e-4334-bd00-9829c99d29f8" />
+        <generalsInternal>
+          <generalization Id="cf4b57b5-48a6-4794-aab6-86bf35e89890" isSubstitutable="false">
+            <classMoniker Id="f9cbe067-eb11-4cf5-bb6f-1f736a376aa7" LastKnownName="DataObject" />
+            <elementDefinition Id="e0190079-4974-4144-8320-de4ebfc25d30" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="cfc000c0-b0a3-4f3f-a6f1-39555eb4f0bb" name="Copy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06c47724-0881-47ae-b7e9-3136ac1ab119" />
+          </operation>
+          <operation Id="59d356f6-6e6c-4086-aa38-a2952b8d7f02" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b4c45bab-7343-4db7-87ac-79c91879e5a7" />
+          </operation>
+          <operation Id="822fc02a-7e77-47a0-b629-573c35bfa573" name="Register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3cc8344d-e57a-4680-945e-5c43768b4f26" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f9cbe067-eb11-4cf5-bb6f-1f736a376aa7" name="DataObject" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="aeb0bdc8-da4d-4e74-80e7-a04bba69dbc8" />
+        <ownedOperationsInternal>
+          <operation Id="b26b1526-b4e8-4d23-8cfb-56b58ca97280" name="Copy" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6e4990df-8669-4ba1-84bf-91346e124966" />
+          </operation>
+          <operation Id="b63483f2-3140-449f-b25b-0477909f9e9b" name="Delete" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9366e926-ab44-4e25-85d5-82e27cf28b53" />
+          </operation>
+          <operation Id="daa31910-4be0-47d9-9c10-8c9bf6507a90" name="Register" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e6172f7a-1fdd-4f79-bc85-673631688187" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dbc2ba0b-c9d7-48da-9ff4-f0aaae94c64d" name="ProductRepository" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7a3af772-dd98-4f97-a43b-9367c1aa6d32" />
+        <generalsInternal>
+          <generalization Id="9f9b5e39-efeb-41fa-aed5-08518c022ee6" isSubstitutable="false">
+            <classMoniker Id="a30b7633-118b-435f-969a-d377ca9f8093" LastKnownName="Repository" />
+            <elementDefinition Id="ebb59aa4-a495-44bb-8c27-067f45638d0e" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="882b4e19-425f-4bec-9e6b-3262f6fc996d" name="AddObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4ec963d3-e265-4be5-a244-c612c01ce25d" />
+          </operation>
+          <operation Id="c1c0eed7-0b5a-44de-b52f-5e0258320231" name="RemoveObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="098ac0bf-7ff4-49cb-bb56-c41a98a464c8" />
+          </operation>
+          <operation Id="791b882d-b792-44cb-bdd9-040dfd9fc199" name="CopyObject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a1e014cd-3557-47fb-a794-be31de93042c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="888832e8-8d44-423c-b0c1-9063e258319e" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2ac4317f-6272-4c69-99f3-861fe3335dd6">
+        <profileInstance Id="d77ef976-04e0-4ee5-86da-6a51fe26c8b5" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3d24994b-b93a-4628-bd53-827f45981176">
+        <profileInstance Id="5feed7c5-3cb1-4859-9e47-d02dc15ab598" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

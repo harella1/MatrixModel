@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e18adbe5-326e-4af6-a26e-93cc9634da90" name="Prototype" linkedPackageId="689fcdba-6cc3-4ab6-b9ce-c78e15eae328" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7aadcd7b-6cf4-49cc-a170-994ffc1e2d8a" name="Supermarket" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="103f31f6-69f9-4870-8e5d-ff16c887013d" />
+        <targetEnds>
+          <association Id="c65862e8-5497-4591-b6f7-0aad3fd8d436" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="0a7940af-bfe9-4e4c-ac56-558eaa4cc931" LastKnownName="ProductPrototype" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="391189c6-5ede-43e1-9662-b81a51790d7e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2e761ce-4748-49e6-b245-06559cd26971" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb70cd92-3023-4cba-82e8-2e568850a843" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="54b64fbd-2981-44fe-b894-663a3b8ca825" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="32452000-153d-4f83-be43-f7cda45a5609" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="5b42efbc-7891-4a63-b1f1-4b4f920ace51" name="AddProduct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="33e4e933-01ab-406f-aa68-08a86a8ad19d" />
+          </operation>
+          <operation Id="841f054f-0a58-4d84-8445-45dd12ce6790" name="GetProduct" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d8d80fea-ee52-44d4-ba08-82f9055b8a49" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0a7940af-bfe9-4e4c-ac56-558eaa4cc931" name="ProductPrototype" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8b409337-54b8-44ad-b698-6c7a9f559464" />
+        <ownedOperationsInternal>
+          <operation Id="a2308d23-bfd1-4555-b52b-67d0d535de6d" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1c144bbf-85f3-45e0-abb5-8746f5e377a4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1291b475-0035-44ab-951b-17db66093ed5" name="Milk" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ecbeac51-4ee0-463c-94c9-247d7166cfaa" />
+        <generalsInternal>
+          <generalization Id="0c289e83-c1c8-4d3c-91a4-33d273b06b71" isSubstitutable="false">
+            <classMoniker Id="0a7940af-bfe9-4e4c-ac56-558eaa4cc931" LastKnownName="ProductPrototype" />
+            <elementDefinition Id="e4616282-b649-4417-bb5d-8be1a849c89f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="337bf7b0-642d-4830-a361-0e7b0ff8e361" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f76a02ee-2c65-4db6-b12b-b65ac52ff0c4" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8d396be2-f25e-43ef-843e-a76caa85b8fb" name="Bread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7b9753bf-efe9-4cc3-ba3e-dd949ead4ded" />
+        <generalsInternal>
+          <generalization Id="c15272b3-e1ef-4410-a002-2f0c3e46c42c" isSubstitutable="false">
+            <classMoniker Id="0a7940af-bfe9-4e4c-ac56-558eaa4cc931" LastKnownName="ProductPrototype" />
+            <elementDefinition Id="d4830cbf-39aa-4656-99eb-0848420d1be6" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="1cf7eb7f-3681-4a88-a052-a3917c25f22b" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="69486c97-b581-4858-bb49-590c263226f9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="689fcdba-6cc3-4ab6-b9ce-c78e15eae328" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+    <profileInstances>
+      <packageHasProfileInstances Id="311d7311-f3ea-461e-8e3f-3a18ac0e5fac">
+        <profileInstance Id="4a2b31af-4794-4140-a9e9-e61cc5f9d3f7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="07d7cb56-3ec6-43af-a4dc-239b496fbad5">
+        <profileInstance Id="f0b3edd7-8baa-47b3-88c3-f74286515e84" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

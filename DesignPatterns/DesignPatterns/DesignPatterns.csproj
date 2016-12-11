@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15373E4F-B719-4F90-AED4-8D548DBF0A1D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesignPatterns</RootNamespace>
+    <AssemblyName>DesignPatterns</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1. Creational Patterns\Abstract Factory\AudiFactory.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\AudiFamilyCar.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\AudiSportsCar.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\CarFactory.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\Driver.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\FamilyCar.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\GenericFactory.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\MercedesFactory.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\MercedesFamilyCar.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\MercedesSportsCar.cs" />
+    <Compile Include="1. Creational Patterns\Abstract Factory\SportsCar.cs" />
+    <Compile Include="1. Creational Patterns\Builder\AppleBuilder.cs" />
+    <Compile Include="1. Creational Patterns\Builder\Computer.cs" />
+    <Compile Include="1. Creational Patterns\Builder\ComputerBuilder.cs" />
+    <Compile Include="1. Creational Patterns\Builder\ComputerShop.cs" />
+    <Compile Include="1. Creational Patterns\Builder\DesktopBuilder.cs" />
+    <Compile Include="1. Creational Patterns\Builder\LaptopBuilder.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\AdventureBookReader.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\BookReader.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\Book.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\Dracula.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\Encyclopedia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="1. Creational Patterns\Factory Method\FantasyBookReader.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\HorrorBookReader.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\LordOfTheRings.cs" />
+    <Compile Include="1. Creational Patterns\Factory Method\TreasureIsland.cs" />
+    <Compile Include="1. Creational Patterns\Prototype\Bread.cs" />
+    <Compile Include="1. Creational Patterns\Prototype\CloneableProduct.cs" />
+    <Compile Include="1. Creational Patterns\Prototype\Milk.cs" />
+    <Compile Include="1. Creational Patterns\Prototype\ProductPrototype.cs" />
+    <Compile Include="1. Creational Patterns\Prototype\Supermarket.cs" />
+    <Compile Include="1. Creational Patterns\Singleton\BusinessRulesManager.cs" />
+    <Compile Include="1. Creational Patterns\Singleton\ConfigurationManager.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\Connector.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\DatabaseConnector.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\DatabaseHelper.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\HttpStreamConnector.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\TradingDataImporter.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\WebSiteScanner.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\XmlFileConnector.cs" />
+    <Compile Include="2. Structural Patterns\Adapter\XmlFileLoader.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\ClientDataObject.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\ClientRepository.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\DataObject.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\ProductDataObject.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\ProductRepository.cs" />
+    <Compile Include="2. Structural Patterns\Bridge\Repository.cs" />
+    <Compile Include="2. Structural Patterns\Decorator\OrderedSet.cs" />
+    <Compile Include="2. Structural Patterns\Decorator\ReadOnlySet.cs" />
+    <Compile Include="2. Structural Patterns\Decorator\SetDecoratorBase.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\BaseLogger.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\ConsoleLogger.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\FileLogger.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\ILogger.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\LogLevel.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\MemoryQueueLogger.cs" />
+    <Compile Include="3. Behavioral Patterns\Chain of Responsibility\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\CreateFileCommand.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\DeleteFileCommand.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\FileOperationInvoker.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\FileSystemOperator.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\FtpFileOperator.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\ICommand.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\IFileOperator.cs" />
+    <Compile Include="3. Behavioral Patterns\Command\RenameFileCommand.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\BeepPlayer.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Accidental.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\AccidentalModifier.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Duration.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Length.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Melody.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\MelodyExpression.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Note.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Tone.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\NullExpression.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Octave.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\MidiPlayer.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Parser.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\CompoundMelodyExpression.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Pause.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Player.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\ContextState.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Context.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\SetLength.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\SetOctave.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Expressions\Shortener.cs" />
+    <Compile Include="3. Behavioral Patterns\Interpreter\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\BreadthFirstIterator.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\BreadthFirstTree.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\DepthFirstIterator.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\DepthFirstTree.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\Node.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\BaseTree.cs" />
+    <Compile Include="3. Behavioral Patterns\Iterator\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\Button.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\CheckBox.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\Control.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\Form.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\IForm.cs" />
+    <Compile Include="3. Behavioral Patterns\Mediator\TextBox.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\Caretaker.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\IMemento.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\IncompatibleMementoException.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\Selection.cs" />
+    <Compile Include="3. Behavioral Patterns\Memento\TextBox.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\Observable.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\IObservable.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\IObserver.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\ObserverSubscribtionException.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\TimePulseBeeper.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\TimePulseObservable.cs" />
+    <Compile Include="3. Behavioral Patterns\Observer\TimePulseWriter.cs" />
+    <Compile Include="3. Behavioral Patterns\Strategy\ArrayBasedCollection.cs" />
+    <Compile Include="3. Behavioral Patterns\Strategy\ExactResizer.cs" />
+    <Compile Include="3. Behavioral Patterns\Strategy\GeometricResizer.cs" />
+    <Compile Include="3. Behavioral Patterns\Strategy\IResizer.cs" />
+    <Compile Include="3. Behavioral Patterns\Strategy\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Addition.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\AlgebraicExpressions.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\BinaryOperator.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Division.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Program.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\ToValueVisitor.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\ToTextVisitor.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\IVisitor.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Multiplication.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Negation.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Number.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\Substraction.cs" />
+    <Compile Include="3. Behavioral Patterns\Visitor\UnaryOperator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="2. Structural Patterns\Composite\" />
+    <Folder Include="2. Structural Patterns\Facade\" />
+    <Folder Include="2. Structural Patterns\Flyweight\" />
+    <Folder Include="2. Structural Patterns\Proxy\" />
+    <Folder Include="3. Behavioral Patterns\State\" />
+    <Folder Include="3. Behavioral Patterns\Template Method\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3. Behavioral Patterns\Interpreter\BNF Grammar.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dfd0e927-267a-402e-a89b-dcf08731e28a" name="Visitor.Idea" linkedPackageId="4072a11d-2bd4-4bf2-916c-34793ac6b01e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="2be5e578-e598-4c21-b4b4-ca2ed95f71fa">
+      <elementDefinition Id="bb547050-e5d7-4f19-9a40-2a00277970d3" />
+      <body>1. This is an interface or an abstract class used to declare the visit operations for each of the types of visitable classes (elements).</body>
+      <annotatedElements>
+        <interfaceMoniker Id="996fcbe3-5d2f-4dbf-8164-e6c55a548d52" LastKnownName="IVisitor" />
+      </annotatedElements>
+    </comment>
+    <comment Id="fdcf00f4-c82b-4d5b-b1fa-e5e870bb2d58">
+      <elementDefinition Id="fb12f26c-4ffb-417a-86f8-8427216f66f7" />
+      <body>3. An abstraction which declares the accept operation. This is the entry point which enables an object to be "visited" by the visitor object.</body>
+      <annotatedElements>
+        <interfaceMoniker Id="5b38c750-9447-4990-a2cb-2c52e135d92b" LastKnownName="IElement" />
+      </annotatedElements>
+    </comment>
+    <comment Id="c1fc46ac-47ee-43ab-82e5-5674379e86ec">
+      <elementDefinition Id="97281a4b-0f9d-4762-86ef-56d2a8d8199a" />
+      <body>2. Responsible to perform specific action with elements of concrete types.</body>
+      <annotatedElements>
+        <classMoniker Id="2d366147-ad8d-49e1-8415-c94c51096ba2" LastKnownName="ConcreteVisitor" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a0f97408-30cc-49dd-b987-098dfa841eb4">
+      <elementDefinition Id="87e9688d-3340-4090-bc8a-8cc4e63206c5" />
+      <body>4. Some data structure, usually a complex one, which contains elements to be processed.</body>
+      <annotatedElements>
+        <classMoniker Id="f2578e15-b80a-46a9-be13-2f9935c5dd1e" LastKnownName="ObjectStructure" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="a2fb5e5c-ebd2-4e76-8647-1cbac4ea0ef0">
+      <profileInstance Id="01768d30-2f28-4746-9f2d-8df8d3a5c2e8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8bc0e4b7-2492-4480-8dbc-31b9c7c60934">
+      <profileInstance Id="04080335-413e-48ac-8fa2-9eff4582141d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a58a2f95-a23c-4b1c-8a0b-56ae9d537607">
+      <profileInstance Id="73ea784d-9431-4455-8788-c716667c9cf6" name="CSharpProfile">
+        <elementDefinition Id="c236f8d0-f876-4b83-bbbe-b22d6d1a6842" />
+      </profileInstance>
+      <elementDefinition Id="108aa994-3968-4d8a-ac4b-45be1fd758fe" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="98c46f73-8686-44c8-85fe-10c2ebced86e" name="Client" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="95f87862-b348-4c4b-8ffb-067357210a16" />
+        <targetEnds>
+          <association Id="128c6c4b-7fc5-47ac-bc1a-101225f5cfa9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f2578e15-b80a-46a9-be13-2f9935c5dd1e" LastKnownName="ObjectStructure" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b13abed-f880-49db-afe3-3c076b2f313f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1c0e6328-a5be-4c39-b4e7-db59e22e9c66" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7c18b3a5-65c1-41bd-b10d-c619b76e8504" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="82b56b13-541d-4ee4-bbab-5bb0ec194f93" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ea9cdc98-93a1-41b9-9199-84c6b7fbda04" />
+          </association>
+          <association Id="9a81a824-31e9-464b-849b-be3edc54fbf9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="996fcbe3-5d2f-4dbf-8164-e6c55a548d52" LastKnownName="IVisitor" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3e21a918-4bc7-4b0b-89ef-7d74529c63dc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fefc3440-be1c-4a0f-920f-c1073f2a4c81" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3bce1b9b-5c04-46df-8c14-2ab5b23b6484" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c195e327-2e1b-4b64-bf97-c118df587478" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0974b779-ebee-4515-9fab-e9223ed9d767" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="996fcbe3-5d2f-4dbf-8164-e6c55a548d52" name="IVisitor" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7a02ae4e-53fc-49f4-9759-44fba8087655" />
+        <ownedOperations>
+          <operation Id="cd835f15-5c7a-455a-8a0a-9486ef95f24a" name="Visit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d18f2a7e-5982-4b33-a91b-a7f16d75e80c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d1be273f-f3ff-4d94-9e91-9201e161fd74" name="elemet" direction="In" isUnique="false">
+                  <elementDefinition Id="78e82daa-9ca6-427d-8f55-cbed953e0c74" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="107f661a-ebbb-4e47-8cc3-35219ef4c9c3" LastKnownName="ConcreteElement" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2d366147-ad8d-49e1-8415-c94c51096ba2" name="ConcreteVisitor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f48edb32-6b58-4708-a537-63e8978269c3" />
+        <suppliersInternal>
+          <interfaceRealization Id="7160c559-89ac-42a8-a5c6-0bda96b74b60">
+            <interfaceMoniker Id="996fcbe3-5d2f-4dbf-8164-e6c55a548d52" LastKnownName="IVisitor" />
+            <elementDefinition Id="6e39d6a1-dec1-41e9-9f5e-1df9a4255620" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="b03e5aa3-c81c-4605-8b22-ec5c8f64db69" name="Visit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d8083b77-53ac-4e35-a8e6-6ebcfc846f18" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8d3c98bb-fa13-4765-9134-02f93685839d" name="elemet" direction="In" isUnique="false">
+                  <elementDefinition Id="a753896a-f45a-45f3-86ab-1d8de55a87b5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="107f661a-ebbb-4e47-8cc3-35219ef4c9c3" LastKnownName="ConcreteElement" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5b38c750-9447-4990-a2cb-2c52e135d92b" name="IElement" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="656a09f9-f226-4d87-b6ae-757a39e37c9e" />
+        <ownedOperations>
+          <operation Id="85db2068-ae24-4d74-9edc-ff137e832fc2" name="Accept" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a38d689-db19-4485-8de5-30c2e2c1af55" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f073a46f-984e-4f04-bcee-3566728b119f" name="visitor" direction="In" isUnique="false">
+                  <elementDefinition Id="294e17db-ce0e-4144-8e37-f7493a96092e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1e89acbe-5550-4775-9fcb-620f9fd93ddf" LastKnownName="IVisitor" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="69265dcb-b6fa-474a-8b94-e9dd0ac0a793" name="ConcreteElement" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="35f7a2fa-b46f-446d-9ab3-4c55b061836e" />
+        <suppliersInternal>
+          <interfaceRealization Id="a2547377-00c5-43ef-80a8-70c38ec890cb">
+            <interfaceMoniker Id="5b38c750-9447-4990-a2cb-2c52e135d92b" LastKnownName="IElement" />
+            <elementDefinition Id="156de902-bcc7-49a1-9a5b-e17252c9da49" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="bb6ce76b-0be0-4c95-8baa-b8dd22971540" name="Accept" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e735503-31cc-4d3d-860a-a27857d37e06" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bf325f74-c1be-4d81-bd86-3cd8a9cc5ef1" name="visitor" direction="In" isUnique="false">
+                  <elementDefinition Id="54939182-18d5-4938-b33c-f6322aa4e647" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1e89acbe-5550-4775-9fcb-620f9fd93ddf" LastKnownName="IVisitor" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f2578e15-b80a-46a9-be13-2f9935c5dd1e" name="ObjectStructure" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="50697d51-f902-40f5-b5a5-34dfb209e2ee" />
+        <targetEnds>
+          <association Id="1b8c1d56-5760-4c4d-afad-94180a634559" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="5b38c750-9447-4990-a2cb-2c52e135d92b" LastKnownName="IElement" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="34ce8ddd-21d1-40eb-9e9a-03b22a11f239" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e7f7cb03-9fec-4971-ba98-ac0aceed322c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef8a5f8d-29b9-473e-886a-d1f921c0dd84" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="8c9d1ce9-e0bb-41f8-b041-41e1a8be2b6b" name="Lower" value="*">
+                      <elementDefinition Id="3fcbc07b-6c8a-45d1-9b06-32b07cc26d29" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="a9561cae-0349-4ce9-8d8f-14b86a327149" name="Upper" value="*">
+                      <elementDefinition Id="9f66471b-d653-4b4e-8a71-fc03390ac4a0" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="24e8d3c1-54f2-4e6b-b2d7-5a005f8bd708" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bdd61464-2361-49bc-8e33-e05d05765ca0" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="1e89acbe-5550-4775-9fcb-620f9fd93ddf" name="IVisitor" isAbstract="false" isLeaf="false" cachedFullName="UMLModel::IVisitor">
+        <elementDefinition Id="7a02ae4e-53fc-49f4-9759-44fba8087655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="107f661a-ebbb-4e47-8cc3-35219ef4c9c3" name="ConcreteElement" isAbstract="false" isLeaf="false" cachedFullName="UMLModel::ConcreteElement">
+        <elementDefinition Id="35f7a2fa-b46f-446d-9ab3-4c55b061836e" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="4072a11d-2bd4-4bf2-916c-34793ac6b01e" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>

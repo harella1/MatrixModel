@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d2e39dae-6a1b-4afb-a574-54e7ed1b47e1" name="Command.Idea" linkedPackageId="33d75976-364a-4f29-9d29-1aa90b1a0046" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="4da49f28-cf86-4d93-a07a-82b95bed8373">
+      <elementDefinition Id="609f8e39-1c85-4a20-9871-47665a90b230" />
+      <body>1. Client creates a command.</body>
+      <annotatedElements>
+        <classMoniker Id="61bb0d20-a481-4550-acb4-6446a7fd5506" LastKnownName="Client" />
+      </annotatedElements>
+    </comment>
+    <comment Id="24b4a057-c118-4641-acc5-2f290d8a3f3d">
+      <elementDefinition Id="0b7f9825-f134-4a7d-969c-0ec10eb18435" />
+      <body>2. Command encapsulate the knowlage to call action as executed.</body>
+      <annotatedElements>
+        <classMoniker Id="be635261-4386-49ca-8211-689fe2509f53" LastKnownName="ConcreteCommand" />
+      </annotatedElements>
+    </comment>
+    <comment Id="882276a8-a565-4c7e-bb1d-2aa19449d05d">
+      <elementDefinition Id="b2547fe5-a88b-43c2-8156-39f79cda0808" />
+      <body>3. Command will be passed across to invoker.</body>
+      <annotatedElements>
+        <interfaceMoniker Id="5c5102c5-32f4-439f-a49c-acc9ddf65c1b" LastKnownName="Command" />
+      </annotatedElements>
+    </comment>
+    <comment Id="036357cf-aac3-4013-a7e2-c6977ecb4308">
+      <elementDefinition Id="d6b3d06f-c05f-49f1-93da-20244e6c5654" />
+      <body>4. At later point of time invoker calls execute on command. As a result command invokes action method on a receiver.</body>
+      <annotatedElements>
+        <classMoniker Id="a135b2cd-fee8-4336-84c0-cb715ca56fba" LastKnownName="Invoker" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a135b2cd-fee8-4336-84c0-cb715ca56fba" name="Invoker" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0a9f5e64-7ba2-4fe7-b1b8-77c90b4bb177" />
+        <targetEnds>
+          <association Id="0f61a2f9-de36-4078-9243-2891e0cc456c" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="5c5102c5-32f4-439f-a49c-acc9ddf65c1b" LastKnownName="Command" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c8ec19e6-6833-4073-9b1b-2aea5e70ebdd" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ef5eb927-bcc3-4d1e-8412-fb593fc67647" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea084aae-62c7-4c8b-ade4-99bf69a09d82" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="b1707530-edfd-4ec1-bb49-7f668a997810" name="Lower" value="*">
+                      <elementDefinition Id="78e447d9-9395-472f-8716-fe55f7242002" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="a42fbf5f-374f-48c2-a75d-e15855e1bd8f" name="Upper" value="*">
+                      <elementDefinition Id="54061fe4-0983-4d62-abd6-0d35218bb59b" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="12a8e52d-b902-46d8-a826-399da109b0cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="492425d7-e3e0-40c0-a396-ed3e1b56e580" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5c5102c5-32f4-439f-a49c-acc9ddf65c1b" name="Command" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="62989620-7f7f-420d-86bf-8ee372d91a0d" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be635261-4386-49ca-8211-689fe2509f53" name="ConcreteCommand" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="635540d2-d8ee-4fcf-ab18-4d8f226e1918" />
+        <suppliersInternal>
+          <interfaceRealization Id="307ee6af-a47d-4ba4-a3d7-2dea0570cf38">
+            <interfaceMoniker Id="5c5102c5-32f4-439f-a49c-acc9ddf65c1b" LastKnownName="Command" />
+            <elementDefinition Id="25b45d11-b64d-4cc2-aeb4-3225e6107699" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="8c774f48-89de-40a7-be2c-6e37b123b686" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="61d70f7b-53b2-493d-a9a6-3b6a0dd3e32f" LastKnownName="Receiver" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="79c4a54a-5629-44cf-8f54-97b9dc5ec827" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d34d4cf9-fc89-4148-a744-f0fe5053ba0c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0202fa26-0287-43ca-8f07-f2f258ef8c8f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e5f4a559-aa0b-4289-86c8-4fad7b76ff73" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e1c3ac6c-3754-4b55-924a-1ac2df40feaa" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="61bb0d20-a481-4550-acb4-6446a7fd5506" name="Client" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dab7a717-550e-4eaa-b0ec-7cb2cc972a3e" />
+        <suppliersInternal>
+          <dependency Id="0858cbd1-a7e1-4e85-93b9-b3e96f5cf35d">
+            <classMoniker Id="be635261-4386-49ca-8211-689fe2509f53" LastKnownName="ConcreteCommand" />
+            <elementDefinition Id="8395e803-ecdd-4558-8578-60398f135601" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="f17851f9-91e0-4517-9551-e96c21fdff30" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="61d70f7b-53b2-493d-a9a6-3b6a0dd3e32f" LastKnownName="Receiver" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e673dde7-bb49-44eb-a20c-93a7c2e16b22" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="53a14177-129b-4161-b01f-21c0591985f6" name="Lower" value="1">
+                      <elementDefinition Id="5df965c5-3566-49a3-8679-9cbb5d4aec0c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="71bc808a-7df2-473a-ac52-00f6382e4636" name="Upper" value="1">
+                      <elementDefinition Id="09cf65db-c672-42ae-adc7-3dc06fef0a03" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="8fb90505-254e-44e5-8a1d-ecd7f67162bb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9fd304a5-35e0-4ca9-9569-449916e26bc3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="70b7ab5c-0ff3-488b-9106-61059305d163" name="Lower" value="*">
+                      <elementDefinition Id="55e63a91-1b9f-497f-bd16-1b5dc79afd33" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="67bf909f-c057-4dbf-93ab-4f8d05d60044" name="Upper" value="*">
+                      <elementDefinition Id="5b8bc25f-ebe0-40d1-b02e-d82c5aa586be" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="240876ff-ccf7-4440-bae7-70a134162c4f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a4f72380-6fe2-4456-8e3a-3ad55f09a5eb" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="61d70f7b-53b2-493d-a9a6-3b6a0dd3e32f" name="Receiver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0e10ddbb-3346-4d60-b0ea-21e0a1977584" />
+        <ownedOperationsInternal>
+          <operation Id="5ebe5cc5-53b8-4c36-82e5-1c1b5cf3362a" name="Action" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d157e2a-ab04-455b-979f-a8e7351b112a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="33d75976-364a-4f29-9d29-1aa90b1a0046" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+    <profileInstances>
+      <packageHasProfileInstances Id="fa2319d8-d3a3-4b97-9684-a5efc8254b9b">
+        <profileInstance Id="f6539abd-e80c-41fc-9753-3fc6ef1ecb56" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a9658199-f4d5-4922-8bec-f0ad9cffe684">
+        <profileInstance Id="4e4917f0-2148-4c2e-b0dc-70eb6c361f6d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="9822b04f-867c-46ba-bd58-1b57f6035385">
+        <profileInstance Id="09c155d8-9458-40a6-ad9b-3c150b05f27f" name="CSharpProfile">
+          <elementDefinition Id="c236f8d0-f876-4b83-bbbe-b22d6d1a6842" />
+        </profileInstance>
+        <elementDefinition Id="108aa994-3968-4d8a-ac4b-45be1fd758fe" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

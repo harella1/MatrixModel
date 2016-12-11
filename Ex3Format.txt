@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptualSystem>
+   <Version MajorNumber="1" MinorNumber="0" />
+   <Contexts>
+      <Context Identifier="0" Type="Binary">
+         <Attributes>
+            <Attribute Identifier="0">
+               <Name>Square</Name>
+            </Attribute>
+            <Attribute Identifier="1">
+               <Name>Circle</Name>
+            </Attribute>
+            <Attribute Identifier="2">
+               <Name>GUI</Name>
+            </Attribute>
+         </Attributes>
+         <Objects>
+            <Object>
+               <Name>CalcSquareArea</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="0" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>CalcSquarePerimeter</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="0" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>CalcDiagonal</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="0" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>CalcCircleArea</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="1" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>CalcCirclePerimeter</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="1" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>CalcMaxContainedTrianglePerimeter</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="1" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>Display</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="2" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>Translation</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="0" />
+                  <HasAttribute AttributeIdentifier="1" />
+               </Intent>
+            </Object>
+            <Object>
+               <Name>Refresh</Name>
+               <Intent>
+                  <HasAttribute AttributeIdentifier="0" />
+                  <HasAttribute AttributeIdentifier="1" />
+                  <HasAttribute AttributeIdentifier="2" />
+               </Intent>
+            </Object>
+         </Objects>
+      </Context>
+   </Contexts>
+   <RecalculationPolicy Value="Clear" />
+   <Lattices />
+</ConceptualSystem>

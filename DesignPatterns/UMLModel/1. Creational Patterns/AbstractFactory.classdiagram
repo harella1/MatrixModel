@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="899d3241-61ed-4fe1-aefc-4663e0794dd0" name="AbstractFactory" linkedPackageId="01116ea6-9c82-4d66-bc42-1381a99cf4d8" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="64da69cf-267a-41a1-9ace-6a3d07f1b17f">
+      <profileInstance Id="36ba69d6-82ef-4f09-a8c8-0bf569eda753" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="dbad2ae4-1d2b-4a10-a910-4a5efa088e68">
+      <profileInstance Id="7f32e0ca-6b64-4980-8909-253ed430cb40" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="14cad5c8-19ce-455f-b788-34eef47c36b4" name="CarFactory" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1a9a2fe1-a09b-43f1-b41f-777360c97646" />
+        <ownedOperationsInternal>
+          <operation Id="565cbc90-4e6b-41e2-b2ae-2d4cef505c0d" name="CreateFamilyCar" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01e73d38-68d0-435f-a870-60d480aeb65b" />
+          </operation>
+          <operation Id="3842683f-34f3-40b2-be59-bb72b7ca3621" name="CreateSportsCar" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce151de6-335a-4209-b77c-a98e8c313017" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bcab2d92-25a8-4a50-bd19-7505780bb19f" name="MercedesFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f762afc3-0449-4d03-820e-18b85d37adc4" />
+        <generalsInternal>
+          <generalization Id="e11b347f-9e1f-4b78-9ca3-af30c38ffb0c" isSubstitutable="false">
+            <classMoniker Id="14cad5c8-19ce-455f-b788-34eef47c36b4" LastKnownName="CarFactory" />
+            <elementDefinition Id="160562a5-382f-4618-ba14-a5f2ad814a6a" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="3fad902b-5c99-431e-8cdf-945bfc0e4f41" name="CreateFamilyCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6dbd7775-eb4a-4ea2-a2cb-ffe57fa477c4" />
+          </operation>
+          <operation Id="9099aa99-881a-40e9-a9a5-136b9fbb52fa" name="CreateSportsCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="90a8becc-1103-467f-afcf-47527416f51e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5f87ad61-d0ca-4c14-a5d7-8eadc5d78ce0" name="AudiFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ed4d0845-901f-46c1-b4d5-62a865cb7138" />
+        <generalsInternal>
+          <generalization Id="38409cb1-c232-4d31-a2e6-7014c5843f40" isSubstitutable="false">
+            <classMoniker Id="14cad5c8-19ce-455f-b788-34eef47c36b4" LastKnownName="CarFactory" />
+            <elementDefinition Id="f052df40-12c1-40a0-8a0d-a8fb57136f87" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="3a39eba3-30b2-48f9-bb2e-9fb717690dc9" name="CreateFamilyCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c199bdad-23d1-48a1-a478-7f4e80e9c24e" />
+          </operation>
+          <operation Id="bb9b8350-74ca-49ca-96fd-a891bd006aa2" name="CreateSportsCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0cb6b49d-0721-4ad8-a676-f5ad09959694" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="38d5aacf-3248-4ef1-a9d9-169554268c6d" name="Driver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b65ba410-8595-4847-addf-82f903b88cd5" />
+        <suppliersInternal>
+          <dependency Id="a81e9347-d3d3-4375-bb05-719b8720ab2b">
+            <classMoniker Id="f2ee860c-8517-48d9-b265-53e867485f70" LastKnownName="FamilyCar" />
+            <elementDefinition Id="22892315-32e2-4711-a6dc-14a1772d56d9" />
+          </dependency>
+          <dependency Id="2f6fca8d-844d-4fc6-80a0-6c4284a4882a">
+            <classMoniker Id="3918c306-9e5f-48b5-9e59-10888d7ce0e9" LastKnownName="SportsCar" />
+            <elementDefinition Id="2aa426b4-72f9-48bd-a4b9-ad8790d4e531" />
+          </dependency>
+          <dependency Id="ae64bf37-530d-4fce-920b-81fbdb71139f">
+            <classMoniker Id="14cad5c8-19ce-455f-b788-34eef47c36b4" LastKnownName="CarFactory" />
+            <elementDefinition Id="8af098ff-3642-4a67-92d1-0d1dffc2bec8" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="4a1b64e7-1462-4e01-839a-39c174d7647d" name="_familyCar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e6ec6b7d-d48d-4c38-8337-0eddd435efa3" />
+          </property>
+          <property Id="dd6ea782-365b-411b-b38b-03607d58bb11" name="_sportsCar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="10b74ce8-8721-4bbf-97aa-8475a8afea73" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="55051c4c-1489-4861-b5d4-461015aab795" name="CompareSpeed" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="626c4b4b-476c-4ece-8d38-5f7b997e895f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3918c306-9e5f-48b5-9e59-10888d7ce0e9" name="SportsCar" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1641aade-bede-4330-8aef-604709e252d5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6ce9140e-4395-4960-ba82-95ed93706cd8" name="MercedesFamilyCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8b35a0f1-ca57-4b0e-aa8b-ab8dc1d89d9e" />
+        <generalsInternal>
+          <generalization Id="a9ab6d70-eb41-4714-813b-8b3e6fdf388b" isSubstitutable="false">
+            <classMoniker Id="f2ee860c-8517-48d9-b265-53e867485f70" LastKnownName="FamilyCar" />
+            <elementDefinition Id="4578c7fc-d2f9-4973-a615-dfa9c2a5befb" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="5636cd51-7e73-45b0-bd27-d7cc185629e4" name="Speed" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="657b5aa2-1005-4e53-8b52-5c35eada3528" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f2ee860c-8517-48d9-b265-53e867485f70" name="FamilyCar" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ce49d9a9-0556-4729-9c24-5340b93e23d1" />
+        <ownedOperationsInternal>
+          <operation Id="c5a3bcd2-ab8d-4921-b1d7-c289d355f3a1" name="Speed" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="130b8767-0845-4976-99c9-70c1a8efb693" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="12ab20b5-25c6-4d7c-97ac-80e572be7ba9" name="AudiFamilyCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b5caaed1-135e-4db1-9c16-fa4edf1d2555" />
+        <generalsInternal>
+          <generalization Id="edfe0ecf-e34c-403e-8378-aae80a945ed2" isSubstitutable="false">
+            <classMoniker Id="f2ee860c-8517-48d9-b265-53e867485f70" LastKnownName="FamilyCar" />
+            <elementDefinition Id="3c9678dc-2f80-4e79-92ef-ccfd95290a2e" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e83de22a-22d6-4570-a4c4-20a1a7398a06" name="Speed" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6a6c9392-a842-494a-bc4b-ad01faa721fe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c1679598-2b81-49c7-b865-a804f77c0bd7" name="MercedesSportsCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ba66ca5c-786a-44f2-b8cf-6ebbfb791b4e" />
+        <generalsInternal>
+          <generalization Id="97d0a515-104e-4e3f-b1bb-71ccfc3cc2b2" isSubstitutable="false">
+            <classMoniker Id="3918c306-9e5f-48b5-9e59-10888d7ce0e9" LastKnownName="SportsCar" />
+            <elementDefinition Id="e80c9847-4397-4127-b196-0871ebb2ee8f" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="670a0dcf-0196-43b9-a1a5-d91b97f6e668" name="AudiSportsCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="285b34c4-9b7b-41f0-a5bd-48f615517c91" />
+        <generalsInternal>
+          <generalization Id="1730453a-e508-4e11-9c87-d0a307d8fdae" isSubstitutable="false">
+            <classMoniker Id="3918c306-9e5f-48b5-9e59-10888d7ce0e9" LastKnownName="SportsCar" />
+            <elementDefinition Id="d0690767-aaf2-47ca-ba2f-7f8142fd6529" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="01116ea6-9c82-4d66-bc42-1381a99cf4d8" name="UMLModel">
+    <elementDefinition Id="e972b18e-8f1a-4828-bed5-78c92d1ee4fe" />
+  </package>
+</logicalClassDesignerModel>
