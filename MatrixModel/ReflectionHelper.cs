@@ -15,10 +15,10 @@ namespace MatrixModel
             try
             {
                 temp.FunctionalsList = new List<Functional>();
-                temp.ProprietysList = new List<Propriety>();
+                temp.ProprietysList = new List<Property>();
                 temp.Name =  T.Name;
                 temp.FunctionalsList.AddRange(LoadFunctionals(T));
-                temp.ProprietysList.AddRange(LoadProprietys(T));
+                temp.ProprietysList.AddRange(LoadProperties(T));
                 return temp;
                
             }
@@ -38,16 +38,16 @@ namespace MatrixModel
                 foreach (MethodInfo m in mth)
                 {
                     if (!FunctionalException.Exists(element => element == m.Name))
-                    {
-                        temp.Add(new Functional() { Name = m.Name,
+                        temp.Add(new Functional()
+                        {
+                            Name = m.Name,
                             ReturnType = m.ReturnType,
-                            Parameters = new List<Type>(
-                            m.GetParameters().Select(x=>x.ParameterType))
+                            Dependencies = new List<Type>(
+                            m.GetParameters().Select(x => x.ParameterType)
+                            .Union(m.GetMethodBody().LocalVariables
+                            .Select(v => v.LocalType)))
+                            .Where(ty => !ty.FullName.StartsWith("System", StringComparison.OrdinalIgnoreCase)).ToList()
                         });
-                        var pInfo = m.GetParameters();
-                        var mb = m.GetMethodBody();
-                        var locvars = mb.LocalVariables;
-                    }
                 }
                 return temp;
             }
@@ -58,15 +58,15 @@ namespace MatrixModel
             }
         }
 
-        public static List<Propriety> LoadProprietys(Type T)
+        public static List<Property> LoadProperties(Type T)
         {
-            List<Propriety> temp = new List<Propriety>();
+            List<Property> temp = new List<Property>();
             try
             {
                 FieldInfo[] proprietys =T.GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
                 foreach (FieldInfo prop in proprietys)
                 {
-                    temp.Add(new Propriety() { Name = prop.Name, Type = prop.GetType() });
+                    temp.Add(new Property() { Name = prop.Name, Type = prop.GetType() });
                 }
                 return temp;
             }

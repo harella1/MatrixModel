@@ -5,18 +5,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
+using System.IO;
 
 namespace MatrixModel
 {
@@ -52,6 +44,11 @@ namespace MatrixModel
             Type[] TypesArray = assembly.GetTypes();
             foreach (Type type in TypesArray)
             {
+                if (type.FullName.StartsWith("System", StringComparison.OrdinalIgnoreCase)
+                    || type.Namespace == null
+                    || type.Namespace.Contains("Annotations"))
+                    continue;
+
                 matrixModelStructs.StructorsList.Add(ReflectionHelper.LoadTypeObject(type));
                
             }
@@ -64,57 +61,54 @@ namespace MatrixModel
                 }
             }
 
-            CreateConceptExplorerFile(matrixModelStructs);
-
+//            CreateConceptExplorerFile(matrixModelStructs);
+            CreateCSVFile(matrixModelStructs);
             btnLoad.IsEnabled = true;
          
 
            
         }
 
+        private void CreateCSVFile(MatrixModelStructs matrixModelStructs)
+        {
+            try
+            {
+                List<FunctionalMatrix> functionalList;
+                List<StructsMatrix> stractorList;
+                CreateMatrixLists(matrixModelStructs, out functionalList, out stractorList);
+
+                // Prepare the values
+                var csv = new StringBuilder();
+                stractorList.Select(s => csv.Append(s.Name + ","));
+
+                var allLines = (from functional in functionalList
+                                select new object[]
+                                {
+                    functional.Name,
+                    functional.Identifier
+                                });
+
+                // Build the file content
+                allLines.Select(line => csv.AppendLine(string.Join(",", line)+","));
+ 
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "csv (*.csv)|*.csv";
+                if (saveFileDialog.ShowDialog() == true)
+                    File.WriteAllText(saveFileDialog.FileName, csv.ToString());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
         private void CreateConceptExplorerFile(MatrixModelStructs matrixModelStructs)
         {
             try
             {
-                List<FunctionalMatrix> functionalList = new List<FunctionalMatrix> ();
-                List<StructsMatrix > stractorList = new List<StructsMatrix>();
-                int identifier = 0;
-                foreach(Structor structor in matrixModelStructs.StructorsList)
-                {
-                    foreach (Functional functionalItem in structor.FunctionalsList)
-                    {
-                        FunctionalMatrix  newFunctional  = new FunctionalMatrix ();
-                        if(!functionalList.Exists(x=>x.Name == functionalItem.Name))
-                        {
-                           
-                            newFunctional.Name = functionalItem.Name ;
-                            newFunctional.Identifier = identifier;
-                            functionalList.Add(newFunctional);
-                            identifier ++;
-                        }
-                        else 
-                        {
-                            newFunctional = functionalList.FirstOrDefault(x=>x.Name == functionalItem.Name);
-                        }
-                        if(!stractorList.Exists(s=>s.Name == structor.Name))
-                        {
-                            StructsMatrix newItem = new StructsMatrix ();
-                            newItem.Name = structor.Name;
-                            newItem.AttributeList = new List<Attribute> ();
-                            newItem.AttributeList.Add( new Attribute(){Identifier = newFunctional.Identifier});
-                            stractorList.Add(newItem);
-                        }
-                        else
-                        {
-                           StructsMatrix stractorItem = stractorList.FirstOrDefault(s=>s.Name == structor.Name);
-                           stractorItem.AttributeList.Add(new Attribute(){Identifier = newFunctional.Identifier});
-                       }
-
-                    }
-                }
-                   // func.AddRange(structor.FunctionalsList);
-              
-                //List<Structor> StructorsList = matrixModelStructs.StructorsList;
+                List<FunctionalMatrix> functionalList;
+                List<StructsMatrix> stractorList;
+                CreateMatrixLists(matrixModelStructs, out functionalList, out stractorList);
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Encoding = new ASCIIEncoding();
                 XElement root = new XElement("ConceptualSystem",
@@ -123,7 +117,7 @@ namespace MatrixModel
                             new XElement("Context", new XAttribute("Identifier", "0"), new XAttribute("Type", "Binary"),
                              new XElement("Attributes",
                                  from item in functionalList
-                                 select new XElement("Attribute",new XAttribute("Identifier", item.Identifier),
+                                 select new XElement("Attribute", new XAttribute("Identifier", item.Identifier),
                                      new XElement("Name", item.Name)
                                      )),
                                      new XElement("Objects",
@@ -136,7 +130,7 @@ namespace MatrixModel
 
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter =  "Cex (*.cex)|*.cex";
+                saveFileDialog.Filter = "Cex (*.cex)|*.cex";
                 if (saveFileDialog.ShowDialog() == true)
                 {
                     string save = saveFileDialog.FileName;
@@ -144,11 +138,50 @@ namespace MatrixModel
                     {
                         root.Save(writer);
                     }
-                }                             
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private static void CreateMatrixLists(MatrixModelStructs matrixModelStructs, out List<FunctionalMatrix> functionalList, out List<StructsMatrix> stractorList)
+        {
+            functionalList = new List<FunctionalMatrix>();
+            stractorList = new List<StructsMatrix>();
+            int identifier = 0;
+            foreach (Structor structor in matrixModelStructs.StructorsList)
+            {
+                foreach (Functional functionalItem in structor.FunctionalsList)
+                {
+                    FunctionalMatrix newFunctional = new FunctionalMatrix();
+                    if (!functionalList.Exists(x => x.Name == functionalItem.Name))
+                    {
+                        newFunctional.Name = functionalItem.Name;
+                        newFunctional.Identifier = identifier;
+                        functionalList.Add(newFunctional);
+                        identifier++;
+                    }
+                    else
+                    {
+                        newFunctional = functionalList.FirstOrDefault(x => x.Name == functionalItem.Name);
+                    }
+                    if (!stractorList.Exists(s => s.Name == structor.Name))
+                    {
+                        StructsMatrix newItem = new StructsMatrix();
+                        newItem.Name = structor.Name;
+                        newItem.AttributeList = new List<Attribute>();
+                        newItem.AttributeList.Add(new Attribute() { Identifier = newFunctional.Identifier });
+                        stractorList.Add(newItem);
+                    }
+                    else
+                    {
+                        StructsMatrix stractorItem = stractorList.FirstOrDefault(s => s.Name == structor.Name);
+                        stractorItem.AttributeList.Add(new Attribute() { Identifier = newFunctional.Identifier });
+                    }
+
+                }
             }
         }
 

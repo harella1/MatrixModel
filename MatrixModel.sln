@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixModel", "MatrixModel\MatrixModel.csproj", "{49C7BA18-ABCC-4C3F-BA44-3A0312A7FA91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClass", "TestClass\TestClass.csproj", "{7605BB8F-627C-4133-9097-32A18D0399A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "matrixReflection", "matrixReflection\matrixReflection.csproj", "{DCDC49F0-7687-4B28-B273-271017C86647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7605BB8F-627C-4133-9097-32A18D0399A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7605BB8F-627C-4133-9097-32A18D0399A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7605BB8F-627C-4133-9097-32A18D0399A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDC49F0-7687-4B28-B273-271017C86647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDC49F0-7687-4B28-B273-271017C86647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDC49F0-7687-4B28-B273-271017C86647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDC49F0-7687-4B28-B273-271017C86647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

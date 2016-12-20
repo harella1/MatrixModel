@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MatrixModel
 {
@@ -19,7 +16,7 @@ namespace MatrixModel
 
         public int Identifier { set; get; }
 
-        public List<Type> Parameters { get; set; }
+        public List<Type> Dependencies { get; set; }
 
     }
 
@@ -42,7 +39,7 @@ namespace MatrixModel
         public int Identifier { set; get; }
     }
 
-    public class Propriety
+    public class Property
     {
         public string Name { set; get; }
         public Type Type { set; get; }
@@ -51,7 +48,7 @@ namespace MatrixModel
     {
         public string Name { set; get; }
         public List<Functional> FunctionalsList { set; get; }
-        public List<Propriety> ProprietysList { set; get; }
+        public List<Property> ProprietysList { set; get; }
 
     }
 }
